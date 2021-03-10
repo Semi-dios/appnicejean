@@ -1,8 +1,8 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 
-import Landing from './views/Landing.vue'
-import Login from './views/Login.vue'
+import Landing from './views/pages/Landing.vue'
+import Login from './views/pages/Login.vue'
 import Employe from './views/Employe.vue'
 
 
