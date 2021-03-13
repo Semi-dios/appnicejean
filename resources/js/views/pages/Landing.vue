@@ -2,8 +2,7 @@
   <div class="container fluid">
       <div class="row">
           <div class="col-sm-2">
-              <button type="button" class="btn btn-block btn-secondary btn-sm">Primary</button>
-              <button type="button" class="btn btn-block btn-outline-success btn-lg">Success</button>
+
           </div>
       </div>
   </div>
@@ -15,6 +14,19 @@ export default {
 }
 </script>
 
-<style>
+<style lang="sass">
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 </style>
