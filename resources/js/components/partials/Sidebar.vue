@@ -23,25 +23,16 @@
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
-          <li class="nav-item has-treeview menu-open">
-            <a href="#" class="nav-link active">
+          <li class="nav-item has-treeview ">
+            <a href="/#/dashboard" class="nav-link active">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
                 Resumen
-                <i class="right fas fa-angle-left"></i>
               </p>
             </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="/#/dashboard" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Resumen</p>
-                </a>
-              </li>
 
-            </ul>
           </li>
-           <li class="nav-item has-treeview menu-open">
+           <li class="nav-item has-treeview ">
             <a href="#" class="nav-link ">
               <i class="nav-icon fas fa-cash-register"></i>
               <p>
@@ -51,9 +42,9 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="/#/dashboard/createorden" class="nav-link">
+                <a href="/#/dashboard/sale/create" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Crear orden de producción</p>
+                  <p>Orden de producción</p>
                 </a>
               </li>
               <li class="nav-item">
@@ -65,7 +56,7 @@
 
             </ul>
           </li>
-           <li class="nav-item has-treeview menu-open">
+           <li class="nav-item has-treeview ">
             <a href="#" class="nav-link ">
               <i class="nav-icon fas fa-users"></i>
               <p>
@@ -75,7 +66,7 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="/#/dashboard/createuser" class="nav-link">
+                <a href="/#/dashboard/users/registeruser" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Registar usuario</p>
                 </a>
@@ -87,14 +78,14 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="/#/dashboard/employes" class="nav-link active">
+                <a href="/#/dashboard/employe" class="nav-link active">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Empleados</p>
                 </a>
               </li>
             </ul>
           </li>
-           <li class="nav-item has-treeview menu-open ">
+           <li class="nav-item  mb-5 has-treeview  ">
             <a href="#" class="nav-link ">
               <i class="nav-icon fas fa-history"></i>
               <p>
@@ -118,7 +109,7 @@
             </ul>
           </li>
 
-           <li class="nav-item has-treeview menu-open">
+           <li class="nav-item has-treeview ">
             <a href="/#/dashboard/userprofile" class="nav-link ">
               <i class="nav-icon fas fa-cogs"></i>
               <p>
