@@ -1,151 +1,74 @@
 <template>
-       <div class="row">
-          <div class="col-md-12">
-            <div class="card card-primary card-outline">
-              <div class="card-header">
-                <h3 class="card-title">
-                  <i class="fas fa-edit"></i>
-                  Outline Buttons
-                </h3>
-              </div>
-              <div class="card-body pad table-responsive">
-                <p>Various types of buttons. Using the base class <code>.btn</code></p>
-                <table class="table table-bordered text-center">
-                  <tbody><tr>
-                    <th>Normal</th>
-                    <th>Large <code>.btn-lg</code></th>
-                    <th>Small <code>.btn-sm</code></th>
-                    <th>Extra Small <code>.btn-xs</code></th>
-                    <th>Flat <code>.btn-flat</code></th>
-                    <th>Disabled <code>.disabled</code></th>
-                  </tr>
-                  <tr>
-                    <td>
-                      <button type="button" class="btn btn-block btn-outline-primary">Primary</button>
-                    </td>
-                    <td>
-                      <button type="button" class="btn btn-block btn-outline-primary btn-lg">Primary</button>
-                    </td>
-                    <td>
-                      <button type="button" class="btn btn-block btn-outline-primary btn-sm">Primary</button>
-                    </td>
-                    <td>
-                      <button type="button" class="btn btn-block btn-outline-primary btn-xs">Primary</button>
-                    </td>
-                    <td>
-                      <button type="button" class="btn btn-block btn-outline-primary btn-flat">Primary</button>
-                    </td>
-                    <td>
-                      <button type="button" class="btn btn-block btn-outline-primary disabled">Primary</button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <button type="button" class="btn btn-block btn-outline-secondary">Secondary</button>
-                    </td>
-                    <td>
-                      <button type="button" class="btn btn-block btn-outline-secondary btn-lg">Secondary</button>
-                    </td>
-                    <td>
-                      <button type="button" class="btn btn-block btn-outline-secondary btn-sm">Secondary</button>
-                    </td>
-                    <td>
-                      <button type="button" class="btn btn-block btn-outline-secondary btn-xs">Secondary</button>
-                    </td>
-                    <td>
-                      <button type="button" class="btn btn-block btn-outline-secondary btn-flat">Secondary</button>
-                    </td>
-                    <td>
-                      <button type="button" class="btn btn-block btn-outline-secondary disabled">Secondary</button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <button type="button" class="btn btn-block btn-outline-success">Success</button>
-                    </td>
-                    <td>
-                      <button type="button" class="btn btn-block btn-outline-success btn-lg">Success</button>
-                    </td>
-                    <td>
-                      <button type="button" class="btn btn-block btn-outline-success btn-sm">Success</button>
-                    </td>
-                    <td>
-                      <button type="button" class="btn btn-block btn-outline-success btn-xs">Success</button>
-                    </td>
-                    <td>
-                      <button type="button" class="btn btn-block btn-outline-success btn-flat">Success</button>
-                    </td>
-                    <td>
-                      <button type="button" class="btn btn-block btn-outline-success disabled">Success</button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <button type="button" class="btn btn-block btn-outline-info">Info</button>
-                    </td>
-                    <td>
-                      <button type="button" class="btn btn-block btn-outline-info btn-lg">Info</button>
-                    </td>
-                    <td>
-                      <button type="button" class="btn btn-block btn-outline-info btn-sm">Info</button>
-                    </td>
-                    <td>
-                      <button type="button" class="btn btn-block btn-outline-info btn-xs">Info</button>
-                    </td>
-                    <td>
-                      <button type="button" class="btn btn-block btn-outline-info btn-flat">Info</button>
-                    </td>
-                    <td>
-                      <button type="button" class="btn btn-block btn-outline-info disabled">Info</button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <button type="button" class="btn btn-block btn-outline-danger">Danger</button>
-                    </td>
-                    <td>
-                      <button type="button" class="btn btn-block btn-outline-danger btn-lg">Danger</button>
-                    </td>
-                    <td>
-                      <button type="button" class="btn btn-block btn-outline-danger btn-sm">Danger</button>
-                    </td>
-                    <td>
-                      <button type="button" class="btn btn-block btn-outline-danger btn-xs">Danger</button>
-                    </td>
-                    <td>
-                      <button type="button" class="btn btn-block btn-outline-danger btn-flat">Danger</button>
-                    </td>
-                    <td>
-                      <button type="button" class="btn btn-block btn-outline-danger disabled">Danger</button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <button type="button" class="btn btn-block btn-outline-warning">Warning</button>
-                    </td>
-                    <td>
-                      <button type="button" class="btn btn-block btn-outline-warning btn-lg">Warning</button>
-                    </td>
-                    <td>
-                      <button type="button" class="btn btn-block btn-outline-warning btn-sm">Warning</button>
-                    </td>
-                    <td>
-                      <button type="button" class="btn btn-block btn-outline-warning btn-xs">Warning</button>
-                    </td>
-                    <td>
-                      <button type="button" class="btn btn-block btn-outline-warning btn-flat">Warning</button>
-                    </td>
-                    <td>
-                      <button type="button" class="btn btn-block btn-outline-warning disabled">Warning</button>
-                    </td>
-                  </tr>
-                </tbody></table>
-              </div>
-              <!-- /.card -->
-            </div>
+  <div class="container-fluid" id="viewLogin">
+      <div class="row justify-content-center d-flex align-content-center align-items-lg-center ">
+          <div class="col-sm-12 col-lg-4">
+              <div class="login-box">
+                <div class="login-logo custom-logo">
+                    <a href="../../index2.html"><b>Admin</b>LTE</a>
+                </div>
+                <!-- /.login-logo -->
+                <div class="card">
+                    <div class="card-body login-card-body">
+                    <p class="login-box-msg">Sign in to start your session</p>
+
+                    <form action="../../index3.html" method="post">
+                        <div class="input-group mb-3">
+                        <input type="email" class="form-control" placeholder="Email">
+                        <div class="input-group-append">
+                            <div class="input-group-text">
+                            <span class="fas fa-envelope"></span>
+                            </div>
+                        </div>
+                        </div>
+                        <div class="input-group mb-3">
+                        <input type="password" class="form-control" placeholder="Password">
+                        <div class="input-group-append">
+                            <div class="input-group-text">
+                            <span class="fas fa-lock"></span>
+                            </div>
+                        </div>
+                        </div>
+                        <div class="row">
+                        <div class="col-8">
+                            <div class="icheck-primary">
+                            <input type="checkbox" id="remember">
+                            <label for="remember">
+                                Remember Me
+                            </label>
+                            </div>
+                        </div>
+                        <!-- /.col -->
+                        <div class="col-4">
+                            <button type="submit" class="btn btn-primary btn-block">Sign In</button>
+                        </div>
+                        <!-- /.col -->
+                        </div>
+                    </form>
+
+                    <div class="social-auth-links text-center mb-3">
+                        <p>- OR -</p>
+                        <a href="#" class="btn btn-block btn-primary">
+                        <i class="fab fa-facebook mr-2"></i> Sign in using Facebook
+                        </a>
+                        <a href="#" class="btn btn-block btn-danger">
+                        <i class="fab fa-google-plus mr-2"></i> Sign in using Google+
+                        </a>
+                    </div>
+                    <!-- /.social-auth-links -->
+
+                    <p class="mb-1">
+                        <a href="forgot-password.html">I forgot my password</a>
+                    </p>
+                    <p class="mb-0">
+                        <a href="register.html" class="text-center">Register a new membership</a>
+                    </p>
+                    </div>
+                    <!-- /.login-card-body -->
+                </div>
+                </div>
           </div>
-          <!-- /.col -->
-        </div>
+      </div>
+  </div>
 </template>
 
 <script>
@@ -157,3 +80,5 @@ export default {
 <style>
 
 </style>
+
+
