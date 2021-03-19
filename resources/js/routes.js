@@ -5,6 +5,8 @@ import VueRouter from 'vue-router'
 import Landing from './views/pages/Landing.vue'
 import Login from './views/pages/Login.vue'
 import Register from './views/pages/Register.vue'
+import Forgot from './views/pages/Forgot.vue'
+import Recovery from './views/pages/Recovery.vue'
 
 
 
@@ -47,6 +49,16 @@ const router  = new VueRouter ({
             path: '/register',
             name: 'register',
             component: Register
+        },
+        {
+            path: '/forgot',
+            name: 'forgot',
+            component: Forgot
+        },
+        {
+            path: '/recovery',
+            name: 'recovery',
+            component: Recovery
         },
         {
             path: '/dashboard',
