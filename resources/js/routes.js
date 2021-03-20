@@ -32,7 +32,9 @@ import EditOrden from './views/sale/EditOrden.vue'
 
 
 const router  = new VueRouter ({
-     routes: [
+    history,
+    linkActiveClass: 'is-active',
+    routes: [
         {
             path: '/',
             name: 'landing',
