@@ -14,7 +14,7 @@
           <a href="#" class="nav__logo">Tasty</a>
 
           <div class="nav__menu" id="nav-menu">
-            <ul class="nav_list">
+            <ul class="nav__list">
               <li class="nav__item">
                 <a href="#home" class="nav__link" @click="hideMenu">Home</a>
               </li>
@@ -31,9 +31,9 @@
               </li>
               <li class="nav__item">
                 <a href="#contact" class="nav__link" @click="hideMenu"
-                  >Contact us</a
-                >
-              </li>
+                  >Contact us</a>
+               </li>
+                <li><i class="far fa-moon change-theme" @click="changeTheme" id="theme-button"></i></li>
             </ul>
           </div>
           <div class="nav__toggle" id="nav-toggle" @click="showMenu">
@@ -890,17 +890,45 @@ export default {
         nav.classList.remove("show-menu");
       }, 500);
     },
+
+    /*========== SHOW SCROLL TOP ==========*/
     scrollTop() {
       const scrollTop = document.getElementById("scroll-top");
       this.scrolly = window.top.scrollY;
       if (this.scrolly >= 560) scrollTop.classList.add("scroll-top");
       else scrollTop.classList.remove("scroll-top");
     },
+    /*========== CHANGE THEME ==========*/
+    changeTheme() {
+      const theme = document.getElementById("theme-button");
+      document.body.classList.toggle("dark-theme")
+      const icontheme ='fa-sun'
+      theme.classList.toggle(icontheme)
+    },
+    /*========== SCROLL REVEAL ANIMATION ==========*/
+    scrollAnimation() {
+      console.log("ESTAMOS DENTRO")
+      const sr = crollReveal({
+        origin: 'top',
+        distance: '30px',
+        duration: 2000,
+        reset: true
+      });
+
+      sr.reveal(`.home__data, .home__img`, {
+        interval: 200
+      })
+    },
   },
   mounted() {
     window.addEventListener("scroll", this.scrollTop);
+    this.scrollAnimation();
   },
 };
+
+
+
+
 </script>
 
 <style>
@@ -919,7 +947,7 @@ export default {
 
   --body-font: "Poppins", sans-serif;
   --biggest-font-size: 2.25rem;
-  --h1-font-size: 1rem;
+  --h1-font-size: 1.5rem;
   --h2-font-size: 1.25rem;
   --h3-font-size: 1rem;
   --normal-font-size: 0.938rem;
@@ -968,8 +996,26 @@ html {
   scroll-behavior: smooth;
 }
 
+/*========== VARIABLE DARK THEME ==========*/
+body.dark-theme{
+  --title-color: #f1f3f2;
+  --text-color: #C7D1CC;
+  --body-color: #1D2521;
+  --container-color: #27302C;
+}
+
+/*========== BUTTON DARK/LIGHT ==========*/
+.change-theme{
+  position: absolute;
+  right: 1rem;
+  top: 1.8rem;
+  color: var(--text-color);
+  font-size: 1rem;
+  cursor: pointer;
+}
+
 body {
-  margin: var(--header-height) 0 0 0;
+  margin: var(--header-height) 0 0 0  !important;
   font-family: var(--body-font);
   font-size: var(--normal-font-size);
   background-color: var(--body-color);
@@ -1000,12 +1046,6 @@ img {
   height: auto;
 }
 
-
-
-/*========== VARIABLE DARK THEME ==========*/
-
-/*========== BUTTON DARK/LIGHT ==========*/
-
 /*========== CLASS CSS ==========*/
 .section {
   padding: 4rem 0 2rem;
@@ -1027,6 +1067,7 @@ img {
   color: var(--first-color);
   font-weight: var(--font-medium);
   margin-bottom: var(--mb-1);
+  font-size: 25px;
 }
 
 /* LAYOUT */
@@ -1057,9 +1098,9 @@ img {
 .nav {
   max-width: 1378px;
   height: var(--header-height);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  display: flex !important;
+  justify-content: space-between!important;
+  align-items: center !important;
 }
 
 @media screen and (max-width: 768px) {
@@ -1404,6 +1445,7 @@ img {
 @media screen and (min-width: 768px){
   body{
     margin: 0;
+    
   }
 
   .bd-container{
@@ -1413,13 +1455,14 @@ img {
   .section{
     padding-top: 8rem;
   }
-
-  .nav{
-    height: calc(var(--header-height) + 1.5rem);
+ body .nav{
+    height: calc(var(--header-height) + 1.5rem) !important;
+    display: flex !important;
   }
-  .nav_list{
-    display: flex;
-     flex-direction: row;
+ 
+  .nav__list{
+    display: flex ;
+    flex-direction: row;
   }
   .nav__item{
     margin-left: var(--mb-5);
@@ -1429,5 +1472,52 @@ img {
   .nav__toggle{
     display: none;
   }
+
+  /* .change-theme{
+    position: initial;
+    margin-left: var(--mb-2);
+  } */
+
+  .home__container{
+    height: 100vh;
+    justify-items: center;
+  }
+
+  .services__container,
+  .menu__container{
+    margin-top: var(--mb-6);
+  }
+
+  .menu__container{
+    grid-template-columns: repeat(3, 210px);
+    column-gap: 4rem;
+  }
+
+  .menu__content{
+    padding: 1.5rem;
+  }
+  .menu__img{
+    width: 130px;
+  }
+
+  .app__store{
+    margin: 0 var(--mb-1);
+  }
+}
+
+@media screen and (min-width: 960px){
+   .bd-container{
+     margin-left: auto;
+     margin-right: auto;
+   }
+
+   .home__img{
+     width: 500px;
+   }
+
+   .about__container,
+   .app__container{
+     column-gap: 7rem;
+   }
 }
 </style>
