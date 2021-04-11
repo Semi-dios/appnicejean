@@ -9,9 +9,9 @@ import Forgot from './views/pages/Forgot.vue'
 import Recovery from './views/pages/Recovery.vue'
 
 
+/* Not Found */
 
-
-
+import NotFound from './views/404.vue'
 /* Dashboard */
 import Dashboard from './views/Dashboard.vue'
 
@@ -127,6 +127,12 @@ const router  = new VueRouter ({
             name: 'sale.edit',
             component: EditOrden,
             meta: { requiresAuth: true },
+        },
+        {
+            path: '/notfound',
+            name: 'notfound',
+            component: NotFound,
+           
         },
 
     ]

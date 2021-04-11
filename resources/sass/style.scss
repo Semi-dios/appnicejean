@@ -4,6 +4,7 @@
 //2. Header
 //3. Content
 //4. Footer
+//5. Sidebar
 /***************/
 
 
@@ -13,4 +14,11 @@
 
 /* 2. Header */
 
-@import  './partials/header'
+@import  './partials/header';
+
+
+/* 3. Content */
+@import  './partials/main';
+/* 5. Sidebar */
+
+@import  './partials/sidebar';
