@@ -31,9 +31,19 @@
               </li>
               <li class="nav__item">
                 <a href="#contact" class="nav__link" @click="hideMenu"
-                  >Contact us</a>
-               </li>
-                <li><i class="far fa-moon change-theme" @click="changeTheme" id="theme-button"></i></li>
+                  >Contact us</a
+                >
+              </li>
+              <li class="nav__item">
+                <a href="#" class="nav__link">Login</a>
+              </li>
+              <li>
+                <i
+                  class="far fa-moon change-theme"
+                  @click="changeTheme"
+                  id="theme-button"
+                ></i>
+              </li>
             </ul>
           </div>
           <div class="nav__toggle" id="nav-toggle" @click="showMenu">
@@ -901,23 +911,23 @@ export default {
     /*========== CHANGE THEME ==========*/
     changeTheme() {
       const theme = document.getElementById("theme-button");
-      document.body.classList.toggle("dark-theme")
-      const icontheme ='fa-sun'
-      theme.classList.toggle(icontheme)
+      document.body.classList.toggle("dark-theme");
+      const icontheme = "fa-sun";
+      theme.classList.toggle(icontheme);
     },
     /*========== SCROLL REVEAL ANIMATION ==========*/
     scrollAnimation() {
-      console.log("ESTAMOS DENTRO")
+      console.log("ESTAMOS DENTRO");
       const sr = crollReveal({
-        origin: 'top',
-        distance: '30px',
+        origin: "top",
+        distance: "30px",
         duration: 2000,
-        reset: true
+        reset: true,
       });
 
       sr.reveal(`.home__data, .home__img`, {
-        interval: 200
-      })
+        interval: 200,
+      });
     },
   },
   mounted() {
@@ -925,10 +935,6 @@ export default {
     this.scrollAnimation();
   },
 };
-
-
-
-
 </script>
 
 <style>
@@ -997,15 +1003,15 @@ html {
 }
 
 /*========== VARIABLE DARK THEME ==========*/
-body.dark-theme{
+body.dark-theme {
   --title-color: #f1f3f2;
-  --text-color: #C7D1CC;
-  --body-color: #1D2521;
-  --container-color: #27302C;
+  --text-color: #c7d1cc;
+  --body-color: #1d2521;
+  --container-color: #27302c;
 }
 
 /*========== BUTTON DARK/LIGHT ==========*/
-.change-theme{
+.change-theme {
   position: absolute;
   right: 1rem;
   top: 1.8rem;
@@ -1015,7 +1021,7 @@ body.dark-theme{
 }
 
 body {
-  margin: var(--header-height) 0 0 0  !important;
+  margin: var(--header-height) 0 0 0 !important;
   font-family: var(--body-font);
   font-size: var(--normal-font-size);
   background-color: var(--body-color);
@@ -1034,7 +1040,6 @@ ul {
 ul {
   padding: 0;
   list-style: none;
-
 }
 
 a {
@@ -1099,7 +1104,7 @@ img {
   max-width: 1378px;
   height: var(--header-height);
   display: flex !important;
-  justify-content: space-between!important;
+  justify-content: space-between !important;
   align-items: center !important;
 }
 
@@ -1145,7 +1150,6 @@ img {
 .nav__toggle {
   font-size: 1.3rem;
   cursor: pointer;
- 
 }
 
 /* SHOW-MENU */
@@ -1367,46 +1371,46 @@ img {
 }
 
 /*========== FOOTER ==========*/
-.footer__container{
+.footer__container {
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   row-gap: 2rem;
 }
 
-.footer__logo{
+.footer__logo {
   font-size: var(--h3-font-size);
   color: var(--first-color);
   font-weight: var(--font-semi-bold);
 }
 
-.footer__description{
+.footer__description {
   display: block;
   font-size: var(--small-font-size);
-  margin: .25rem 0 var(--mb-3);
+  margin: 0.25rem 0 var(--mb-3);
 }
 
-.footer__social{
+.footer__social {
   font-size: 1.5rem;
   color: var(--title-color);
   margin-right: var(--mb-2);
 }
 
-.footer__title{
+.footer__title {
   font-size: var(--h2-font-size);
   color: var(--title-color);
   margin-bottom: var(--mb-2);
 }
 
-.footer__link{
+.footer__link {
   display: inline-block;
   color: var(--text-color);
-   margin-bottom: var(--mb-1);
+  margin-bottom: var(--mb-1);
 }
 
-.footer__link:hover{
+.footer__link:hover {
   color: var(--first-color);
 }
 
-.footer__copy{
+.footer__copy {
   text-align: center;
   font-size: var(--small-font-size);
   color: var(--text-color-light);
@@ -1414,62 +1418,64 @@ img {
 }
 
 /*========== MEDIA QUERIES ==========*/
-@media screen and (min-width: 576px){
-  .home__container, 
-  .about__container, 
-  .app__container{
-    grid-template-columns: repeat(2,1fr);
+@media screen and (min-width: 576px) {
+  .home__container,
+  .about__container,
+  .app__container {
+    grid-template-columns: repeat(2, 1fr);
     align-items: center;
   }
 
-  .about__data, .about__initial,
-  .app__data, .app__initial
-  .contact__container, .contact__initial{
+  .about__data,
+  .about__initial,
+  .app__data,
+  .app__initial .contact__container,
+  .contact__initial {
     text-align: initial;
   }
 
-  .about__img, .app__img{
+  .about__img,
+  .app__img {
     width: 380px;
     order: -1;
   }
 
-  .contact__container{
+  .contact__container {
     grid-template-columns: 1.75fr 1fr;
     align-items: center;
   }
-   .contact__button{
-     justify-self: center;
-   }
+  .contact__button {
+    justify-self: center;
+  }
 }
 
-@media screen and (min-width: 768px){
-  body{
+@media screen and (min-width: 768px) {
+  body {
     margin: 0;
-    
   }
 
-  .bd-container{
-  max-width: 1378px;
+  .bd-container {
+    max-width: 1378px;
   }
 
-  .section{
+  .section {
     padding-top: 8rem;
   }
- body .nav{
+  body .nav {
     height: calc(var(--header-height) + 1.5rem) !important;
     display: flex !important;
   }
- 
-  .nav__list{
-    display: flex ;
+
+  .nav__list {
+    display: flex;
     flex-direction: row;
   }
-  .nav__item{
+  .nav__item {
     margin-left: var(--mb-5);
     margin-bottom: 0;
   }
 
-  .nav__toggle{
+  .nav__toggle {
     display: none;
   }
 
@@ -1478,46 +1484,46 @@ img {
     margin-left: var(--mb-2);
   } */
 
-  .home__container{
+  .home__container {
     height: 100vh;
     justify-items: center;
   }
 
   .services__container,
-  .menu__container{
+  .menu__container {
     margin-top: var(--mb-6);
   }
 
-  .menu__container{
+  .menu__container {
     grid-template-columns: repeat(3, 210px);
     column-gap: 4rem;
   }
 
-  .menu__content{
+  .menu__content {
     padding: 1.5rem;
   }
-  .menu__img{
+  .menu__img {
     width: 130px;
   }
 
-  .app__store{
+  .app__store {
     margin: 0 var(--mb-1);
   }
 }
 
-@media screen and (min-width: 960px){
-   .bd-container{
-     margin-left: auto;
-     margin-right: auto;
-   }
+@media screen and (min-width: 960px) {
+  .bd-container {
+    margin-left: auto;
+    margin-right: auto;
+  }
 
-   .home__img{
-     width: 500px;
-   }
+  .home__img {
+    width: 500px;
+  }
 
-   .about__container,
-   .app__container{
-     column-gap: 7rem;
-   }
+  .about__container,
+  .app__container {
+    column-gap: 7rem;
+  }
 }
 </style>

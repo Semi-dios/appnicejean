@@ -3771,6 +3771,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -42486,6 +42489,8 @@ var render = function() {
                       )
                     ]),
                     _vm._v(" "),
+                    _vm._m(1),
+                    _vm._v(" "),
                     _c("li", [
                       _c("i", {
                         staticClass: "far fa-moon change-theme",
@@ -42511,9 +42516,9 @@ var render = function() {
         ),
         _vm._v(" "),
         _c("main", { staticClass: "l-main" }, [
-          _vm._m(1),
-          _vm._v(" "),
           _vm._m(2),
+          _vm._v(" "),
+          _vm._m(3),
           _vm._v(" "),
           _c(
             "section",
@@ -43647,14 +43652,14 @@ var render = function() {
             ]
           ),
           _vm._v(" "),
-          _vm._m(3),
-          _vm._v(" "),
           _vm._m(4),
           _vm._v(" "),
-          _vm._m(5)
+          _vm._m(5),
+          _vm._v(" "),
+          _vm._m(6)
         ]),
         _vm._v(" "),
-        _vm._m(6)
+        _vm._m(7)
       ])
     ]
   )
@@ -43669,6 +43674,16 @@ var staticRenderFns = [
       { staticClass: "scrolltop", attrs: { href: "#", id: "scroll-top" } },
       [_c("i", { staticClass: "fas fa-angle-up scrolltop__icon" })]
     )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("li", { staticClass: "nav__item" }, [
+      _c("a", { staticClass: "nav__link", attrs: { href: "#" } }, [
+        _vm._v("Login")
+      ])
+    ])
   },
   function() {
     var _vm = this
