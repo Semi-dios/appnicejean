@@ -1,24 +1,38 @@
-/* CONTENT LIST */
-/***************/
-//1. General
-//2. Header
-//3. Content
-//4. Footer
-//5. Sidebar
-/***************/
+﻿// Fonts
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
 
 
 
 
 
+// Admin Lte
+@import '~admin-lte/dist/css/adminlte.css';
+//Font Awesome
 
-/* 2. Header */
+@import '~@fortawesome/fontawesome-free/scss/fontawesome';
+@import '~@fortawesome/fontawesome-free/scss/regular';
+@import '~@fortawesome/fontawesome-free/scss/solid';
+@import '~@fortawesome/fontawesome-free/scss/brands';
 
-@import  './partials/header';
+//Variable
 
 
-/* 3. Content */
-@import  './partials/main';
-/* 5. Sidebar */
 
-@import  './partials/sidebar';
+@import './global/variables';
+
+// Mixin
+
+@import './mixin/mixin';
+
+//Global
+
+
+@import './global/global';
+
+
+
+
+
+// My style
+
+@import './app';
