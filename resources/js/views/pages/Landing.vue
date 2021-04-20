@@ -1,5 +1,5 @@
 <template>
-  <div class="container fluid" id="Landing">
+  <div class="container fluid" id="viewLanding">
     <div class="row">
       <div class="col-sm-2"></div>
 
@@ -9,35 +9,35 @@
       </a>
 
       <!--------------- HEADER --------------->
-      <header class="l-header scroll-header" id="header">
+      <header class="l-header  z-fixed scroll-header" id="header">
         <nav class="nav bd-container">
           <a href="#" class="nav__logo">Tasty</a>
 
           <div class="nav__menu" id="nav-menu">
             <ul class="nav__list">
-              <li class="nav__item">
+              <li class="nav__item mb-2">
                 <a href="#home" class="nav__link" @click="hideMenu">Home</a>
               </li>
-              <li class="nav__item">
+              <li class="nav__item mb-2">
                 <a href="#about" class="nav__link" @click="hideMenu">About</a>
               </li>
-              <li class="nav__item">
+              <li class="nav__item mb-2">
                 <a href="#services" class="nav__link" @click="hideMenu"
                   >Services</a
                 >
               </li>
-              <li class="nav__item">
+              <li class="nav__item mb-2">
                 <a href="#menu" class="nav__link" @click="hideMenu">Menu</a>
               </li>
-              <li class="nav__item">
+              <li class="nav__item mb-2">
                 <a href="#contact" class="nav__link" @click="hideMenu"
                   >Contact us</a
                 >
               </li>
-              <li class="nav__item">
+              <li class="nav__item mb-2">
                 <a href="#" class="nav__link">Login</a>
               </li>
-              <li class="nav__item">
+              <li class="nav__item" >
                 <i
                   class="far fa-moon change-theme "
                   @click="changeTheme"
@@ -57,7 +57,7 @@
         <section class="home" id="home">
           <div class="home__container bd-container bd-grid">
             <div class="home__data">
-              <h1 class="home__title">Tasty food</h1>
+              <h1 class="home__title biggest-font-size mb-1">Tasty food</h1>
               <h2 class="home__subtitle">
                 Try the best food of <br />
                 the week.
@@ -73,12 +73,12 @@
         <section class="about section bd-container" id="about">
           <div class="about__container bd-grid">
             <div class="about__data">
-              <span class="section-subtitle about__initial">About us</span>
-              <h2 class="section-title">
+              <span class="section-subtitle  about__initial">About us</span>
+              <h2 class="section-title mb-3">
                 We cook the best <br />
                 tasty food
               </h2>
-              <p class="about__description">
+              <p class="about__description mb-3">
                 We cook the best food in the entire city, with excellent
                 customer service, the best meals and at the best price, visit
                 us.
@@ -305,7 +305,7 @@
                   fill="#cbcbcb"
                 />
               </svg>
-              <h3 class="services__title">excellent food</h3>
+              <h3 class="services__title ">excellent food</h3>
               <p class="services__description">
                 We offer our clients excellent quality services for many years
                 with the best and delicious food in the city
@@ -745,8 +745,8 @@
             <div class="menu__content">
               <img src="images/img1.1.png" alt="" class="menu__img" />
               <h3 class="menu__name">Barbecue salad</h3>
-              <span class="menu__detail">Delicious dish</span>
-              <span class="menu__preci">$22.00</span>
+              <span class="menu__detail small-font-size">Delicious dish</span>
+              <span class="menu__preci small-font-size">$22.00</span>
               <a href="#" class="button menu__button"
                 ><i class="fas fa-cart-plus"></i
               ></a>
@@ -755,8 +755,8 @@
             <div class="menu__content">
               <img src="images/img1.1.png" alt="" class="menu__img" />
               <h3 class="menu__name">Salad with fish</h3>
-              <span class="menu__detail">Delicious dish</span>
-              <span class="menu__preci">$12.00</span>
+              <span class="menu__detail small-font-size">Delicious dish</span>
+              <span class="menu__preci small-font-size">$12.00</span>
               <a href="#" class="button menu__button"
                 ><i class="fas fa-cart-plus"></i
               ></a>
@@ -765,8 +765,8 @@
             <div class="menu__content">
               <img src="images/img1.1.png" alt="" class="menu__img" />
               <h3 class="menu__name">Spinach salad</h3>
-              <span class="menu__detail">Delicious dish</span>
-              <span class="menu__preci">$9.50</span>
+              <span class="menu__detail small-font-size">Delicious dish</span>
+              <span class="menu__preci small-font-size">$9.50</span>
               <a href="#" class="button menu__button"
                 ><i class="fas fa-cart-plus"></i
               ></a>
@@ -823,7 +823,7 @@
         <div class="footer__container bd-grid">
           <div class="footer__content">
             <a href="#" class="footer__logo">Tasty Food</a>
-            <span class="footer__description">Restaurant</span>
+            <span class="footer__description small-font-size">Restaurant</span>
 
             <div>
               <a href="#" class="footer__social"
@@ -869,7 +869,7 @@
           </div>
         </div>
 
-        <p class="footer__copy">&#169; 2020 Bedimcode. All ridht reserved.</p>
+        <p class="footer__copy small-font-size">&#169; 2020 Bedimcode. All ridht reserved.</p>
       </footer>
     </div>
   </div>
@@ -916,23 +916,11 @@ export default {
       theme.classList.toggle(icontheme);
     },
     /*========== SCROLL REVEAL ANIMATION ==========*/
-    scrollAnimation() {
-      console.log("ESTAMOS DENTRO");
-       const sr = crollReveal({
-        origin: "top",
-        distance: "30px",
-        duration: 2000,
-        reset: true,
-      }); 
 
-      sr.reveal(`.home__data, .home__img`, {
-        interval: 200,
-      });
-    },
   },
   mounted() {
     window.addEventListener("scroll", this.scrollTop);
-    /* this.scrollAnimation(); */
+
   },
 };
 </script>
