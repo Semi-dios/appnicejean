@@ -39,7 +39,7 @@
               </li>
               <li class="nav__item d-flex align-items-center justify-content-center" >
                 <i
-                  class="far fa-moon change-theme"
+                  class="far fa-moon change-theme "
                   @click="changeTheme"
                   id="theme-button"
                 ></i>

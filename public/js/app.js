@@ -2262,7 +2262,273 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-/* harmony default export */ __webpack_exports__["default"] = ({});
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {};
+  },
+  methods: {
+    notFound: function notFound() {
+      console.log("llego");
+      $(function () {
+        var liWidth = $("li").css("width");
+        $("li").css("height", liWidth);
+        $("li").css("lineHeight", liWidth);
+        var totalHeight = $("#wordsearch").css("width");
+        $("#wordsearch").css("height", totalHeight);
+      });
+      var causeRepaintsOn = $("h1, h2, h3, p");
+      $(window).resize(function () {
+        causeRepaintsOn.css("z-index", 1);
+      });
+      $(window).on('resize', function () {
+        var liWidth = $(".one").css("width");
+        $("li").css("height", liWidth);
+        $("li").css("lineHeight", liWidth);
+        var totalHeight = $("#wordsearch").css("width");
+        $("#wordsearch").css("height", totalHeight);
+      });
+      $(function () {
+        /* 4 */
+        $(this).delay(1500).queue(function () {
+          $(".one").addClass("selected");
+          $(this).dequeue();
+        })
+        /* 0 */
+        .delay(500).queue(function () {
+          $(".two").addClass("selected");
+          $(this).dequeue();
+        })
+        /* 4 */
+        .delay(500).queue(function () {
+          $(".three").addClass("selected");
+          $(this).dequeue();
+        })
+        /* P */
+        .delay(500).queue(function () {
+          $(".four").addClass("selected");
+          $(this).dequeue();
+        })
+        /* A */
+        .delay(500).queue(function () {
+          $(".five").addClass("selected");
+          $(this).dequeue();
+        })
+        /* G */
+        .delay(500).queue(function () {
+          $(".six").addClass("selected");
+          $(this).dequeue();
+        })
+        /* E */
+        .delay(500).queue(function () {
+          $(".seven").addClass("selected");
+          $(this).dequeue();
+        })
+        /* N */
+        .delay(500).queue(function () {
+          $(".eight").addClass("selected");
+          $(this).dequeue();
+        })
+        /* O */
+        .delay(500).queue(function () {
+          $(".nine").addClass("selected");
+          $(this).dequeue();
+        })
+        /* T */
+        .delay(500).queue(function () {
+          $(".ten").addClass("selected");
+          $(this).dequeue();
+        })
+        /* F */
+        .delay(500).queue(function () {
+          $(".eleven").addClass("selected");
+          $(this).dequeue();
+        })
+        /* O */
+        .delay(500).queue(function () {
+          $(".twelve").addClass("selected");
+          $(this).dequeue();
+        })
+        /* U */
+        .delay(500).queue(function () {
+          $(".thirteen").addClass("selected");
+          $(this).dequeue();
+        })
+        /* N */
+        .delay(500).queue(function () {
+          $(".fourteen").addClass("selected");
+          $(this).dequeue();
+        })
+        /* D */
+        .delay(500).queue(function () {
+          $(".fifteen").addClass("selected");
+          $(this).dequeue();
+        });
+      });
+    }
+  },
+  mounted: function mounted() {
+    this.notFound();
+  }
+});
 
 /***/ }),
 
@@ -40606,9 +40872,192 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("h1", [_vm._v("Aqui va el 404 not found")])
+  return _vm._m(0)
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { attrs: { id: "notFound" } }, [
+      _c("div", { attrs: { id: "wrap" } }, [
+        _c("div", { attrs: { id: "wordsearch" } }, [
+          _c("ul", [
+            _c("li", [_vm._v("k")]),
+            _vm._v(" "),
+            _c("li", [_vm._v("v")]),
+            _vm._v(" "),
+            _c("li", [_vm._v("n")]),
+            _vm._v(" "),
+            _c("li", [_vm._v("z")]),
+            _vm._v(" "),
+            _c("li", [_vm._v("i")]),
+            _vm._v(" "),
+            _c("li", [_vm._v("x")]),
+            _vm._v(" "),
+            _c("li", [_vm._v("m")]),
+            _vm._v(" "),
+            _c("li", [_vm._v("e")]),
+            _vm._v(" "),
+            _c("li", [_vm._v("t")]),
+            _vm._v(" "),
+            _c("li", [_vm._v("a")]),
+            _vm._v(" "),
+            _c("li", [_vm._v("x")]),
+            _vm._v(" "),
+            _c("li", [_vm._v("l")]),
+            _vm._v(" "),
+            _c("li", { staticClass: "one" }, [_vm._v("4")]),
+            _vm._v(" "),
+            _c("li", { staticClass: "two" }, [_vm._v("0")]),
+            _vm._v(" "),
+            _c("li", { staticClass: "three" }, [_vm._v("4")]),
+            _vm._v(" "),
+            _c("li", [_vm._v("y")]),
+            _vm._v(" "),
+            _c("li", [_vm._v("y")]),
+            _vm._v(" "),
+            _c("li", [_vm._v("w")]),
+            _vm._v(" "),
+            _c("li", [_vm._v("v")]),
+            _vm._v(" "),
+            _c("li", [_vm._v("b")]),
+            _vm._v(" "),
+            _c("li", [_vm._v("o")]),
+            _vm._v(" "),
+            _c("li", [_vm._v("q")]),
+            _vm._v(" "),
+            _c("li", [_vm._v("d")]),
+            _vm._v(" "),
+            _c("li", [_vm._v("y")]),
+            _vm._v(" "),
+            _c("li", [_vm._v("p")]),
+            _vm._v(" "),
+            _c("li", [_vm._v("a")]),
+            _vm._v(" "),
+            _c("li", { staticClass: "four" }, [_vm._v("p")]),
+            _vm._v(" "),
+            _c("li", { staticClass: "five" }, [_vm._v("a")]),
+            _vm._v(" "),
+            _c("li", { staticClass: "six" }, [_vm._v("g")]),
+            _vm._v(" "),
+            _c("li", { staticClass: "seven" }, [_vm._v("e")]),
+            _vm._v(" "),
+            _c("li", [_vm._v("v")]),
+            _vm._v(" "),
+            _c("li", [_vm._v("j")]),
+            _vm._v(" "),
+            _c("li", [_vm._v("a")]),
+            _vm._v(" "),
+            _c("li", { staticClass: "eight" }, [_vm._v("n")]),
+            _vm._v(" "),
+            _c("li", { staticClass: "nine" }, [_vm._v("o")]),
+            _vm._v(" "),
+            _c("li", { staticClass: "ten" }, [_vm._v("t")]),
+            _vm._v(" "),
+            _c("li", [_vm._v("s")]),
+            _vm._v(" "),
+            _c("li", [_vm._v("c")]),
+            _vm._v(" "),
+            _c("li", [_vm._v("e")]),
+            _vm._v(" "),
+            _c("li", [_vm._v("w")]),
+            _vm._v(" "),
+            _c("li", [_vm._v("v")]),
+            _vm._v(" "),
+            _c("li", [_vm._v("x")]),
+            _vm._v(" "),
+            _c("li", [_vm._v("e")]),
+            _vm._v(" "),
+            _c("li", [_vm._v("p")]),
+            _vm._v(" "),
+            _c("li", [_vm._v("c")]),
+            _vm._v(" "),
+            _c("li", [_vm._v("f")]),
+            _vm._v(" "),
+            _c("li", [_vm._v("h")]),
+            _vm._v(" "),
+            _c("li", [_vm._v("q")]),
+            _vm._v(" "),
+            _c("li", [_vm._v("e")]),
+            _vm._v(" "),
+            _c("li", { staticClass: "eleven" }, [_vm._v("f")]),
+            _vm._v(" "),
+            _c("li", { staticClass: "eleven" }, [_vm._v("o")]),
+            _vm._v(" "),
+            _c("li", { staticClass: "eleven" }, [_vm._v("u")]),
+            _vm._v(" "),
+            _c("li", { staticClass: "eleven" }, [_vm._v("n")]),
+            _vm._v(" "),
+            _c("li", { staticClass: "eleven" }, [_vm._v("d")]),
+            _vm._v(" "),
+            _c("li", [_vm._v("s")]),
+            _vm._v(" "),
+            _c("li", [_vm._v("w")]),
+            _vm._v(" "),
+            _c("li", [_vm._v("q")]),
+            _vm._v(" "),
+            _c("li", [_vm._v("v")]),
+            _vm._v(" "),
+            _c("li", [_vm._v("o")]),
+            _vm._v(" "),
+            _c("li", [_vm._v("s")]),
+            _vm._v(" "),
+            _c("li", [_vm._v("m")]),
+            _vm._v(" "),
+            _c("li", [_vm._v("v")]),
+            _vm._v(" "),
+            _c("li", [_vm._v("f")]),
+            _vm._v(" "),
+            _c("li", [_vm._v("u")])
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { attrs: { id: "main-content" } }, [
+          _c("h1", { staticClass: "home__subtitle" }, [
+            _vm._v("We couldn't find what you were looking for.")
+          ]),
+          _vm._v(" "),
+          _c("p", { staticClass: "about__description" }, [
+            _vm._v(
+              "Unfortunately the page you were looking for could not be found. It may be\n      temporarily unavailable, moved or no longer exist."
+            )
+          ]),
+          _vm._v(" "),
+          _c("p", [
+            _vm._v(
+              "Check the URL you entered for any mistakes and try again. Alternatively, search\n      for whatever is missing or take a look around the rest of our site."
+            )
+          ]),
+          _vm._v(" "),
+          _c("div", { attrs: { id: "search" } }, [
+            _c("form", [
+              _c("input", { attrs: { type: "text", placeholder: "Search" } })
+            ])
+          ]),
+          _vm._v(" "),
+          _c("div", { attrs: { id: "navigation" } }, [
+            _c("a", { staticClass: "navigation", attrs: { href: "#" } }, [
+              _vm._v("Home")
+            ]),
+            _vm._v(" "),
+            _c("a", { staticClass: "navigation", attrs: { href: "#" } }, [
+              _vm._v("About Us")
+            ]),
+            _vm._v(" "),
+            _c("a", { staticClass: "navigation", attrs: { href: "#" } }, [
+              _vm._v("Services")
+            ]),
+            _vm._v(" "),
+            _c("a", { staticClass: "navigation", attrs: { href: "#" } }, [
+              _vm._v("Contact Us")
+            ])
+          ])
+        ])
+      ])
+    ])
+  }
+]
 render._withStripped = true
 
 
@@ -41867,7 +42316,7 @@ var render = function() {
                       },
                       [
                         _c("i", {
-                          staticClass: "far fa-moon change-theme",
+                          staticClass: "far fa-moon change-theme ",
                           attrs: { id: "theme-button" },
                           on: { click: _vm.changeTheme }
                         })
