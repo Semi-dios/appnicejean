@@ -37,9 +37,9 @@
               <li class="nav__item">
                 <a href="#" class="nav__link">Login</a>
               </li>
-              <li>
+              <li class="nav__item">
                 <i
-                  class="far fa-moon change-theme"
+                  class="far fa-moon change-theme "
                   @click="changeTheme"
                   id="theme-button"
                 ></i>
@@ -918,12 +918,12 @@ export default {
     /*========== SCROLL REVEAL ANIMATION ==========*/
     scrollAnimation() {
       console.log("ESTAMOS DENTRO");
-      const sr = crollReveal({
+       const sr = crollReveal({
         origin: "top",
         distance: "30px",
         duration: 2000,
         reset: true,
-      });
+      }); 
 
       sr.reveal(`.home__data, .home__img`, {
         interval: 200,
@@ -932,7 +932,7 @@ export default {
   },
   mounted() {
     window.addEventListener("scroll", this.scrollTop);
-    this.scrollAnimation();
+    /* this.scrollAnimation(); */
   },
 };
 </script>
