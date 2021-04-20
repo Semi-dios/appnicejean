@@ -3848,7 +3848,8 @@ __webpack_require__.r(__webpack_exports__);
     /*========== CHANGE THEME ==========*/
     changeTheme: function changeTheme() {
       var theme = document.getElementById("theme-button");
-      document.body.classList.toggle("dark-theme");
+      var body = document.querySelector(".body-container");
+      body.classList.toggle("dark-theme");
       var icontheme = "fa-sun";
       theme.classList.toggle(icontheme);
     }
@@ -41769,7 +41770,10 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    { staticClass: "container fluid", attrs: { id: "viewLanding" } },
+    {
+      staticClass: "body-container container-fluid",
+      attrs: { id: "viewLanding" }
+    },
     [
       _c("div", { staticClass: "row" }, [
         _c("div", { staticClass: "col-sm-2" }),
@@ -41793,7 +41797,7 @@ var render = function() {
                 { staticClass: "nav__menu", attrs: { id: "nav-menu" } },
                 [
                   _c("ul", { staticClass: "nav__list" }, [
-                    _c("li", { staticClass: "nav__item mb-2" }, [
+                    _c("li", { staticClass: "nav__item " }, [
                       _c(
                         "a",
                         {
@@ -41805,7 +41809,7 @@ var render = function() {
                       )
                     ]),
                     _vm._v(" "),
-                    _c("li", { staticClass: "nav__item mb-2" }, [
+                    _c("li", { staticClass: "nav__item " }, [
                       _c(
                         "a",
                         {
@@ -41817,7 +41821,7 @@ var render = function() {
                       )
                     ]),
                     _vm._v(" "),
-                    _c("li", { staticClass: "nav__item mb-2" }, [
+                    _c("li", { staticClass: "nav__item " }, [
                       _c(
                         "a",
                         {
@@ -41829,7 +41833,7 @@ var render = function() {
                       )
                     ]),
                     _vm._v(" "),
-                    _c("li", { staticClass: "nav__item mb-2" }, [
+                    _c("li", { staticClass: "nav__item " }, [
                       _c(
                         "a",
                         {
@@ -41841,7 +41845,7 @@ var render = function() {
                       )
                     ]),
                     _vm._v(" "),
-                    _c("li", { staticClass: "nav__item mb-2" }, [
+                    _c("li", { staticClass: "nav__item " }, [
                       _c(
                         "a",
                         {
@@ -41855,13 +41859,20 @@ var render = function() {
                     _vm._v(" "),
                     _vm._m(1),
                     _vm._v(" "),
-                    _c("li", { staticClass: "nav__item" }, [
-                      _c("i", {
-                        staticClass: "far fa-moon change-theme",
-                        attrs: { id: "theme-button" },
-                        on: { click: _vm.changeTheme }
-                      })
-                    ])
+                    _c(
+                      "li",
+                      {
+                        staticClass:
+                          "nav__item d-flex align-items-center justify-content-center"
+                      },
+                      [
+                        _c("i", {
+                          staticClass: "far fa-moon change-theme",
+                          attrs: { id: "theme-button" },
+                          on: { click: _vm.changeTheme }
+                        })
+                      ]
+                    )
                   ])
                 ]
               ),
@@ -43043,7 +43054,7 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("li", { staticClass: "nav__item mb-2" }, [
+    return _c("li", { staticClass: "nav__item " }, [
       _c("a", { staticClass: "nav__link", attrs: { href: "#" } }, [
         _vm._v("Login")
       ])

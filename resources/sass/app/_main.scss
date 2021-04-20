@@ -207,6 +207,7 @@
 
     color: $primary;
     margin-bottom: 0.5rem;
+    font-weight: 800;
   }
 
   .home__subtitle {
@@ -519,6 +520,39 @@
        column-gap: 7rem;
      }
   }
+
+
+    &.dark-theme{
+        background: $body-dark;
+        .l-header  {
+            background-color:  $body-dark;
+        }
+        .nav__menu {
+            background:  $body-dark;
+        }
+        .scrolltop__icon {
+            background:  $body-dark;
+        }
+
+        .section-title,.home__subtitle,  .services__title,.footer__social,.footer__title  {
+            color:$grey-5;
+        }
+
+        .nav__link,
+        .nav__logo,
+        .nav__toggle,
+        .footer__link {
+            color:$grey-20;
+            font-weight: 500;
+            &:hover {
+                color: $primary;
+            }
+        }
+         .menu__content{
+            background-color: $container-dark;
+        }
+
+    }
 }
 
 

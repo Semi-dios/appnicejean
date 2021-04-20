@@ -37,38 +37,16 @@ html {
 }
 
  /*========== VARIABLE DARK THEME ==========*/
-body {
-    &.dark-theme{
-        background: #1D2521;
-        p, span {
-            color:#C7D1CC;
-        }
 
-        h1,h2,h3,h4,h5,h6 {
-            color:#f1f3f2;
-        }
-       .container {
-        color: #27302C;
-       }
-       #viewLanding .scroll-header{
-        background: #1D2521;
-        .nav__menu {
-            background: #1D2521;
-           }
-       }
-
-      }
-
+/*========== BUTTON DARK/LIGHT ==========*/
+.change-theme{
+/* position: absolute; */
+right: 1rem;
+top: .8rem;
+color: $grey-55;
+font-size: 1rem;
+cursor: pointer;
 }
-  /*========== BUTTON DARK/LIGHT ==========*/
-  .change-theme{
-    position: absolute;
-    right: 1rem;
-    top: .8rem;
-    color: $grey-55;
-    font-size: 1rem;
-    cursor: pointer;
-  }
 
 
 

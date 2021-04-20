@@ -1,5 +1,5 @@
 <template>
-  <div class="container fluid" id="viewLanding">
+  <div class="body-container container-fluid" id="viewLanding">
     <div class="row">
       <div class="col-sm-2"></div>
 
@@ -15,29 +15,29 @@
 
           <div class="nav__menu" id="nav-menu">
             <ul class="nav__list">
-              <li class="nav__item mb-2">
+              <li class="nav__item ">
                 <a href="#home" class="nav__link" @click="hideMenu">Home</a>
               </li>
-              <li class="nav__item mb-2">
+              <li class="nav__item ">
                 <a href="#about" class="nav__link" @click="hideMenu">About</a>
               </li>
-              <li class="nav__item mb-2">
+              <li class="nav__item ">
                 <a href="#services" class="nav__link" @click="hideMenu"
                   >Services</a
                 >
               </li>
-              <li class="nav__item mb-2">
+              <li class="nav__item ">
                 <a href="#menu" class="nav__link" @click="hideMenu">Menu</a>
               </li>
-              <li class="nav__item mb-2">
+              <li class="nav__item ">
                 <a href="#contact" class="nav__link" @click="hideMenu"
                   >Contact us</a
                 >
               </li>
-              <li class="nav__item mb-2">
+              <li class="nav__item ">
                 <a href="#" class="nav__link">Login</a>
               </li>
-              <li class="nav__item" >
+              <li class="nav__item d-flex align-items-center justify-content-center" >
                 <i
                   class="far fa-moon change-theme"
                   @click="changeTheme"
@@ -911,7 +911,8 @@ export default {
     /*========== CHANGE THEME ==========*/
     changeTheme() {
       const theme = document.getElementById("theme-button");
-      document.body.classList.toggle("dark-theme");
+      const body = document.querySelector(".body-container");
+     body.classList.toggle("dark-theme");
       const icontheme = "fa-sun";
       theme.classList.toggle(icontheme);
     },
