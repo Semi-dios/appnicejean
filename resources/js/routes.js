@@ -33,6 +33,8 @@ import ShowOrden from './views/sale/ShowOrden.vue'
 import EditOrden from './views/sale/EditOrden.vue'
 
 
+
+/* Client */
 const router  = new VueRouter ({
     history,
     linkActiveClass: 'is-active',
@@ -61,6 +63,12 @@ const router  = new VueRouter ({
             path: '/recovery',
             name: 'recovery',
             component: Recovery
+        },
+        {
+            path: '/logout',
+            name: 'logout',
+            component: Logout,
+            meta: { requiresAuth: true },
         },
         {
             path: '/dashboard',
@@ -129,10 +137,35 @@ const router  = new VueRouter ({
             meta: { requiresAuth: true },
         },
         {
-            path: '/notfound',
+            path: '/404',
             name: 'notfound',
             component: NotFound,
-           
+
+        },
+        {
+            path: '*',
+            name: 'notfound',
+            component: NotFound,
+
+        },
+
+        {
+            path: '/dashboard/clients',
+            name: 'passport-clients',
+            component: require('./components/passport/Clients.vue').default,
+
+        },
+        {
+            path: '/dashboard/clients/authorized',
+            name: 'passport-authorized-clients',
+            component: require('./components/passport/AuthorizedClients.vue').default,
+
+        },
+        {
+            path: '/dashboard/clients/tokens',
+            name: 'passport-personal-access-tokens',
+            component: require('./components/passport/PersonalAccessTokens.vue').default,
+
         },
 
     ]

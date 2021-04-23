@@ -35,7 +35,7 @@
                 >
               </li>
               <li class="nav__item ">
-                <a href="#" class="nav__link">Login</a>
+                <a href="/#/login" class="nav__link">Login</a>
               </li>
               <li class="nav__item d-flex align-items-center justify-content-center" >
                 <i

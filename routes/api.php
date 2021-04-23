@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Http\Request;
+use Illuminate\Routing\Router;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,6 +15,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
+Route::post('login', 'Api\AuthController@login');
+Route::post('register', 'Api\AuthController@registers');
+
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
+});
+
+
+
+Route::middleware(['auth:api'])->group(function () {
+    Route::get('user-info', 'Api\AuthController@user');
+    Route::post('logout','Api\AuthController@logout');
 });

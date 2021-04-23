@@ -569,6 +569,7 @@
 
   /* NOT FOUND 404 */
   #notFound{
+    @extend #viewLanding;
    ::selection{
      background-color: rgba(0,0,0,0.2);
    }
@@ -579,7 +580,7 @@
 
 
    a{
-     color: white;
+     color:$white;
      text-decoration: none;
      border-bottom: 1px solid rgba(255,255,255,0.5);
      transition: all 0.5s ease;
@@ -596,38 +597,36 @@
      border-bottom: 1px solid rgba(255, 255, 255, .1);
    }
 
-   #noscript-warning {
+   .noscript-warning {
      width: 100%;
      text-align: center;
      background-color: rgba(0, 0, 0, 0.2);
      font-weight: 300;
-     color: white;
+     color:$white;
      padding: 10px 0px 10px 0px;
-    //  padding-bottom: 10px;
+
    }
 
    /* === WRAP === */
-   #wrap {
-     width: 80%;
-     max-width: 1400px;
-     margin:0 auto;
+   .wrap {
+     width: 100%;
+     margin: 0 auto;
      height: auto;
-     position: relative;
-     margin-top: 8%;
+
+
    }
 
    /* === MAIN TEXT CONTENT === */
-   #main-content {
+   .main-content {
      float: right;
-     max-width: 45%;
-     color: white;
+     color:$white;
      font-weight: 300;
      font-size: 18px;
      padding-bottom: 40px;
      line-height: 28px;
    }
 
-   #main-content h1 {
+   .main-content h1 {
      margin: 0px;
      font-weight: 400;
      font-size: 42px;
@@ -636,15 +635,15 @@
    }
 
    /* === NAVIGATION BUTTONS === */
-   #navigation { margin-top: 2%; }
+   .nav { margin-top: 2%; }
 
-   #navigation a.navigation {
+   .nav a.navigation {
      display: block;
      float: left;
      background-color: rgba(0, 0, 0, 0.2);
      padding-left: 15px;
      padding-right: 15px;
-     color: white;
+     color:$white;
      height: 41px;
      line-height: 41px;
      text-decoration: none;
@@ -658,26 +657,26 @@
      border-bottom: none;
    }
 
-   #navigation a.navigation i { line-height: 41px; }
+   .nav a.navigation i { line-height: 41px; }
 
-   #navigation a.navigation:hover {
-     background-color: rgba(26, 188, 156, 0.7);
+   .nav a.navigation:hover {
+     background-color: rgba(6, 156, 84, 0.7);
      border-bottom: none;
    }
 
    /* === WORDSEARCH === */
 
-   #wordsearch {
-     width: 45%;
+   .wordsearch {
+     width: 100%;
      float: left;
    }
 
-   #wordsearch ul {
+   .wordsearch ul {
      margin: 0px;
      padding: 0px;
    }
 
-   #wordsearch ul li {
+   .wordsearch ul li {
      float: left;
      width: 12%;
      background-color: rgba(0, 0, 0, .2);
@@ -691,7 +690,7 @@
      text-transform: uppercase;
      overflow: hidden;
      font-size: 24px;
-     font-size: 1.6vw;
+
      font-weight: 300;
      transition: background-color 0.75s ease;
      -moz-transition: background-color 0.75s ease;
@@ -699,14 +698,14 @@
      -o-transition: background-color 0.75s ease;
    }
 
-   #wordsearch ul li.selected {
-     background-color: rgba(26, 188, 156, 0.7);
+   .wordsearch ul li.selected {
+     background-color: rgba(6, 156, 84, 0.7);
      color: rgba(255, 255, 255, 1);
      font-weight: 400;
    }
 
    /* === SEARCH FORM === */
-   #search input[type='text']{
+   .search input[type='text']{
      width: 88%;
      height: 41px;
      padding-left: 15px;
@@ -719,7 +718,7 @@
      -webkit-appearance: none;
      font-size: 16px;
      font-weight: 300;
-     color: white;
+     color:$white;
      font-family: 'source sans pro', sans-serif;
      transition: all 0.5s ease;
      -moz-transition: all 0.5s ease;
@@ -728,7 +727,7 @@
      border-radius: 0px;
    }
 
-   #search .input-search {
+   .search .input-search {
      width: 10%;
      float: right;
      height: 41px;
@@ -737,7 +736,7 @@
      border: none;
      -webkit-appearance: none;
      font-family: 'source sans pro', sans-serif;
-     color: white;
+     color:$white;
      font-weight: 300;
      font-size: 16px;
      cursor: pointer;
@@ -748,29 +747,29 @@
      text-align: center;
    }
 
-   #search .input.search:hover {
-     background-color: rgba(26, 188, 156, 0.7);
+   .search .input.search:hover {
+     background-color: rgba(6, 156, 84, 0.7);
    }
 
 
    /* === RESPONSIVE SCSS === */
 
    @media all and (max-width: 899px) {
-     #wrap { width: 90%; }
+     .wrap { width: 90%; }
    }
 
    @media all and (max-width: 799) {
-     #wrap { width: 90%; height: auto; margin-top: 40px; top: 0%; }
-     #wordsearch { width: 90%; float: none; margin: 0 auto; }
-     #wordsearch ul li { font-size: 4vw; }
-     #main-content { float: none; width: 90%; max-width: 90%; margin: 0 auto; margin-top: 30px; text-align: justify; }
-     #main-content h1 { text-align: left; }
-     #search input[type='text'] { width: 84%; }
-     #search .input-search { width: 15%; }
+     .wrap { width: 90%; height: auto; margin-top: 40px; top: 0%; }
+     .wordsearch { width: 90%; float: none; margin: 0 auto; }
+     .wordsearch ul li { font-size: 4vw; }
+     .main-content { float: none; width: 90%; max-width: 90%; margin: 0 auto; margin-top: 30px; text-align: justify; }
+     .main-content h1 { text-align: left; }
+     .search input[type='text'] { width: 84%; }
+     .search .input-search { width: 15%; }
    }
 
    @media all and (max-width: 499px) {
-     #main-content h1 { font-size: 28px; }
+     .main-content h1 { font-size: 28px; }
    }
   }
 

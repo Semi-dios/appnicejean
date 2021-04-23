@@ -29,6 +29,7 @@
         "vue-template-compiler": "^2.6.10"
     },
     "dependencies": {
-        "vue-scroll-reveal": "^1.0.11"
+        "vue-scroll-reveal": "^1.0.11",
+        "vuex": "^3.6.2"
     }
 }

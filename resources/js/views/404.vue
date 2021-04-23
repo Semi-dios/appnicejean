@@ -1,173 +1,179 @@
 <template>
 
-  <div id="notFound">
-<div id="wrap">
-  <div id="wordsearch">
-    <ul>
-      <li>k</li>
+  <div id="notFound" class="container-fluid pt-5 body-container">
+    <div id="wrap" class=" row wrap d-flex align-content-center justify-content-center">
+       <div class="col-sm-12 col-lg-6 col-xl-4 pr-xl-2 d-flex justify-content-center mb-sm-5">
+            <div id="wordsearch" class="wordsearch">
+            <ul>
+            <li>k</li>
 
-      <li>v</li>
+            <li>v</li>
 
-      <li>n</li>
+            <li>n</li>
 
-      <li>z</li>
+            <li>z</li>
 
-      <li>i</li>
+            <li>i</li>
 
-      <li>x</li>
+            <li>x</li>
 
-      <li>m</li>
+            <li>m</li>
 
-      <li>e</li>
+            <li>e</li>
 
-      <li>t</li>
+            <li>t</li>
 
-      <li>a</li>
+            <li>a</li>
 
-      <li>x</li>
+            <li>x</li>
 
-      <li>l</li>
+            <li>l</li>
 
-      <li class="one">4</li>
+            <li class="one">4</li>
 
-      <li class="two">0</li>
+            <li class="two">0</li>
 
-      <li class="three">4</li>
+            <li class="three">4</li>
 
-      <li>y</li>
+            <li>y</li>
 
-      <li>y</li>
+            <li>y</li>
 
-      <li>w</li>
+            <li>w</li>
 
-      <li>v</li>
+            <li>v</li>
 
-      <li>b</li>
+            <li>b</li>
 
-      <li>o</li>
+            <li>o</li>
 
-      <li>q</li>
+            <li>q</li>
 
-      <li>d</li>
+            <li>d</li>
 
-      <li>y</li>
+            <li>y</li>
 
-      <li>p</li>
+            <li>p</li>
 
-      <li>a</li>
+            <li>a</li>
 
-      <li class="four">p</li>
+            <li class="four">p</li>
 
-      <li class="five">a</li>
+            <li class="five">a</li>
 
-      <li class="six">g</li>
+            <li class="six">g</li>
 
-      <li class="seven">e</li>
+            <li class="seven">e</li>
 
-      <li>v</li>
+            <li>v</li>
 
-      <li>j</li>
+            <li>j</li>
 
-      <li>a</li>
+            <li>a</li>
 
-      <li class="eight">n</li>
+            <li class="eight">n</li>
 
-      <li class="nine">o</li>
+            <li class="nine">o</li>
 
-      <li class="ten">t</li>
+            <li class="ten">t</li>
 
-      <li>s</li>
+            <li>s</li>
 
-      <li>c</li>
+            <li>c</li>
 
-      <li>e</li>
+            <li>e</li>
 
-      <li>w</li>
+            <li>w</li>
 
-      <li>v</li>
+            <li>v</li>
 
-      <li>x</li>
+            <li>x</li>
 
-      <li>e</li>
+            <li>e</li>
 
-      <li>p</li>
+            <li>p</li>
 
-      <li>c</li>
+            <li>c</li>
 
-      <li>f</li>
+            <li>f</li>
 
-      <li>h</li>
+            <li>h</li>
 
-      <li>q</li>
+            <li>q</li>
 
-      <li>e</li>
+            <li>e</li>
 
-      <li class="eleven">f</li>
+            <li class="eleven">f</li>
 
-      <li class="eleven">o</li>
+            <li class="eleven">o</li>
 
-      <li class="eleven">u</li>
+            <li class="eleven">u</li>
 
-      <li class="eleven">n</li>
+            <li class="eleven">n</li>
 
-      <li class="eleven">d</li>
+            <li class="eleven">d</li>
 
-      <li>s</li>
+            <li>s</li>
 
-      <li>w</li>
+            <li>w</li>
 
-      <li>q</li>
+            <li>q</li>
 
-      <li>v</li>
-      
-      <li>o</li>
+            <li>v</li>
 
-      <li>s</li>
+            <li>o</li>
 
-      <li>m</li>
+            <li>s</li>
 
-      <li>v</li>
+            <li>m</li>
 
-      <li>f</li>
+            <li>v</li>
 
-      <li>u</li>
-    </ul>
-  </div>
+            <li>f</li>
 
-  <div id="main-content">
-    <h1 class="home__subtitle">We couldn't find what you were looking for.</h1>
+            <li>u</li>
+            </ul>
+        </div>
+       </div>
 
-    <p class="about__description">Unfortunately the page you were looking for could not be found. It may be
-      temporarily unavailable, moved or no longer exist.</p>
+      <div class="col-sm-12 col-lg-6 col-xl-4 pl-lg-2 d-flex justify-content-center mb-sm-5">
+            <div id="main-content" class="main-content">
+                <h1 class="home__subtitle">We couldn't find what you were looking for.</h1>
 
-      <p>Check the URL you entered for any mistakes and try again. Alternatively, search
-      for whatever is missing or take a look around the rest of our site.</p>
+                <p class="about__description">Unfortunately the page you were looking for could not be found. It may be
+                temporarily unavailable, moved or no longer exist.</p>
 
-      <div id="search">
-        <form>
-          <input type="text" placeholder="Search" />
-        </form>
+                <p>Check the URL you entered for any mistakes and try again. Alternatively, search
+                for whatever is missing or take a look around the rest of our site.</p>
+
+                <div id="search" class="search">
+                    <form>
+                    <input type="text" placeholder="Search" />
+                    </form>
+                </div>
+
+            <div id="navigation" class="nav">
+                <a class="navigation" href="#">Home</a>
+                <a class="navigation" href="#">About Us</a>
+                <a class="navigation" href="#">Services</a>
+                <a class="navigation" href="#">Contact Us</a>
+            </div>
+        </div>
       </div>
+    </div>
+  </div>
 
-      <div id="navigation">
-        <a class="navigation" href="#">Home</a>
-        <a class="navigation" href="#">About Us</a>
-        <a class="navigation" href="#">Services</a>
-        <a class="navigation" href="#">Contact Us</a>
-      </div>
-  </div>
-</div>
-  </div>
-  
 </template>
 
 <script>
+
 export default {
 data(){
   return{
 
   }
 },
+
 methods:{
   notFound(){
     console.log("llego")

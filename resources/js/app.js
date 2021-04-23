@@ -8,6 +8,7 @@ require('./bootstrap');
 
  import Vue from 'vue';
  import VueRouter from 'vue-router';
+ import store from './store';
  import App from './App.vue';
 
 
@@ -17,9 +18,28 @@ require('./bootstrap');
 
 import router from './routes';
 
+
+router.beforeEach((to, from, next)=> {
+    if(to.matched.some(record=>record.meta.requiresAuth)){
+        // this route requires auth, check if logged in
+      // if not, redirect to login page.
+
+        if(!store.getters.loggedIn){
+            next({
+                name:'login'
+            })
+        }else {
+            next()
+        }
+    }else {
+        next()
+    }
+})
+
 const app = new Vue({
     el: '#app',
     render: h=>h(App),
-    router
+    router,
+    store
 });
 
