@@ -14,33 +14,28 @@ class AuthController extends Controller
 
     public function login(Request $request)
     {
-        $http = new \GuzzleHttp\Client;
+        $data = $request->validate([
+            'email' => 'required|email',
+            'password' => 'required'
+        ]);
 
+        $user = User::where('email', $request->email)->first();
 
-        try {
-            $response = $http->post(config('services.passport,login_endpoint'),[
-                'form_params'=> [
-                    'grant_type'=>'password',
-                    'client_id' =>config('services.passport.client_id'),
-                    'client_secret' =>config('services.passport.client_secret'),
-                    'username'=>$request->username,
-                    'password'=>$request->password,
-                ]
-            ]);
-
-            return $response->getBody();
-        }catch(\GuzzleHttp\Exception\BadResponseException $e) {
-            if ($e->getCode() === 400) {
-                return response()->json('Invalid Request. Please enter a username or a password', $e->getCode());
-            }else if($e->getCode() === 401) {
-                return response()->json('Your credentials are incorrect . Please try again', $e->getCode());
-
-            }
-            return response()->json('Something went wrong on the server', $e->getCode());
-
-
+        if(!$user || !Hash::check($request->password, $user->password)) {
+          return response([
+            'message'=> ['These credentials do not match our records']
+          ], 404);
         }
 
+
+        $token = $user->createToken('my-app-token')->plainTextToken;
+
+        $response = [
+          'user'=>$user,
+          'token'=>$token
+        ];
+
+        return response($response, 201);
 
     }
 
@@ -73,7 +68,7 @@ class AuthController extends Controller
 
     }
 
-    public function userDetail(){
+    public function userDetail(Request $request){
         $user = Auth::user();
         return response()->json(['user'=>$user],200);
     }

@@ -4,6 +4,7 @@ import VueRouter from 'vue-router'
 /* Web */
 import Landing from './views/pages/Landing.vue'
 import Login from './views/pages/Login.vue'
+import Logout from './views/pages/Logout.vue'
 import Register from './views/pages/Register.vue'
 import Forgot from './views/pages/Forgot.vue'
 import Recovery from './views/pages/Recovery.vue'
@@ -38,6 +39,7 @@ import EditOrden from './views/sale/EditOrden.vue'
 const router  = new VueRouter ({
     history,
     linkActiveClass: 'is-active',
+    base: process.env.BASE_URL,
     routes: [
         {
             path: '/',
@@ -169,6 +171,17 @@ const router  = new VueRouter ({
         },
 
     ]
+})
+
+router.beforeEach((to, from, next)=> {
+   const loggedIn = localStorage.getItem('user');
+
+   if(to.matched.some(record=> record.meta.auth) && !loggedIn) {
+       next('/login')
+       return
+   }
+
+   next()
 })
 
 

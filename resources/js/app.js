@@ -3,43 +3,42 @@
  * includes Vue and other libraries. It is a great starting point when
  * building robust, powerful web applications using Vue and Laravel.
  */
-
+import Vue from 'vue';
+window.Vue = Vue;
+import App from './App.vue';
+import router from './routes';
+import store from './store';
 require('./bootstrap');
+import VeeValidate from 'vee-validate';
 
- import Vue from 'vue';
  import VueRouter from 'vue-router';
- import store from './store';
- import App from './App.vue';
-
-
-
- window.Vue = Vue;
  Vue.use(VueRouter);
 
-import router from './routes';
 
+Vue.config.productionTip = false;
+Vue.use(VeeValidate)
 
-router.beforeEach((to, from, next)=> {
-    if(to.matched.some(record=>record.meta.requiresAuth)){
-        // this route requires auth, check if logged in
-      // if not, redirect to login page.
-
-        if(!store.getters.loggedIn){
-            next({
-                name:'login'
-            })
-        }else {
-            next()
-        }
-    }else {
-        next()
-    }
-})
-
-const app = new Vue({
-    el: '#app',
-    render: h=>h(App),
+new Vue({
     router,
-    store
-});
+    store,
+    created() {
+        const userInfo = localStorage.getItem('user')
+        if(userInfo) {
+            const userData = JSON.parse(userInfo)
+            this.$store.commit('setUserData',userData)
+        }
+
+        axios.interceptors.response.use (
+            response =>response,
+            error => {
+                if(error.response.status === 401){
+                    this.$store.dispatch('logout')
+                }
+                return Promise.reject(error)
+            }
+        )
+    },
+    render: h=>h(App),
+
+}).$mount('#app');
 

@@ -8,20 +8,23 @@
                 </div>
                 <!-- /.login-logo -->
                 <div class="card">
-                    <div class="card-body login-card-body">
+                    <div class="card-body login-card-body" >
                     <p class="login-box-msg">Ingrese sus credenciales</p>
 
-                    <form action="#" method="post">
+                    <form autocomplete="off" @submit.prevent="handlelogin" method="post">
                         <div class="input-group mb-3">
-                        <input type="email" class="form-control" placeholder="Correo">
-                        <div class="input-group-append">
-                            <div class="input-group-text">
-                            <span class="fas fa-envelope"></span>
+                            <input type="email" class="form-control" name="username" v-validate="'required'" v-model="user.email" placeholder="Correo">
+                            <div class="input-group-append">
+                                <div class="input-group-text">
+                                <span class="fas fa-envelope"></span>
+                                </div>
                             </div>
+
+                            <div class="alert alert-danger" v-if="errors.has('email')" role="danger">El email es requerido</div>
                         </div>
-                        </div>
+
                         <div class="input-group mb-3">
-                        <input type="password" class="form-control" placeholder="Contraseña">
+                        <input type="password" class="form-control"  v-validate="'required'" v-model="password" placeholder="Contraseña">
                         <div class="input-group-append">
                             <div class="input-group-text">
                             <span class="fas fa-lock"></span>
@@ -72,8 +75,39 @@
 </template>
 
 <script>
+import User from '../../models/user'
 export default {
+    name: 'Login',
+data(){
+    return {
+       user: new User('',''),
+       loading: false,
+       message: ''
+    };
+},
+methods: {
+     login() {
 
+         console.log(this.$store)
+         this.$store.dispatch('login',
+             {
+             email:this.email,
+             password: this.password
+         })
+         .this(response => {
+             this.$router.push({name: "dashboard"})
+         })
+         .catch(error=> {
+             this.error = error.response.data;
+             console.log(error)
+         })
+     }
+},
+
+mounted(){
+    console.log(this.login);
+    this.login();
+}
 }
 </script>
 

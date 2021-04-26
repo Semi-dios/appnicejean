@@ -108,7 +108,10 @@
         </div>
       </li>
       <li class="nav-item">
-        <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#"><i class="fas fa-th-large"></i></a>
+        <button class="nav-link btn" type="button" data-widget="control-sidebar" data-slide="true" v-if="islogged" @click="logout()">Logout</button>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link"  data-widget="control-sidebar" data-slide="true" href="#"><i class="fas fa-th-large"></i></a>
       </li>
     </ul>
   </nav>

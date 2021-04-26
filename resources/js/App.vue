@@ -3,7 +3,7 @@
     <Header></Header>
     <Sidebar></Sidebar>
   <div class="content-wrapper" style="min-height: 956.3px;">
- 
+
     <section class="content">
       <div class="row">
             <div class="col-sm-12">
@@ -24,11 +24,11 @@
                     </section>
                 <router-view></router-view>
             </div>
-       
+
       </div>
-    
+
     </section>
-  
+
   </div>
 </div>
 <div v-else>
@@ -39,13 +39,27 @@
 <script>
 import Header from './components/partials/Header'
 import Sidebar from './components/partials/Sidebar'
-
+import { mapGetters } from  'vuex'
 export default {
+
     components:{
         Header,
         Sidebar
 
+    },
+    computed: {
+        ...mapGetters([
+            'islogged'
+        ])
+    },
+    methods: {
+        logout () {
+            this.$store.dispatch('logout')
+        }
     }
+
+
+
 }
 </script>
 
