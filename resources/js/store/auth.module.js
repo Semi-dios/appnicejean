@@ -8,7 +8,7 @@ const initialState = user
 
 
 export const auth = {
-    namespaced: true,
+     namespaced: true,
     state: initialState,
     actions: {
         login({commit}, user) {
@@ -19,7 +19,7 @@ export const auth = {
                 },
                 error => {
                     commit('loginFailure');
-                    return Promise.resolve(user);
+                    return Promise.reject(error);
                 }
             );
         },
@@ -29,7 +29,7 @@ export const auth = {
         },
         register({commit}, user) {
             return AuthService.register(user).then(
-                response=> {
+                response => {
                     commit('registerSuccess');
                     return Promise.resolve(response.data);
                 },
@@ -60,7 +60,7 @@ export const auth = {
             state.status.loggedIn = false;
         },
         registerFailure(state) {
-            state.status.loggedIn =false;
+            state.status.loggedIn = false;
         }
     }
 }

@@ -33,11 +33,11 @@ import CreateOrden from './views/sale/CreateOrden.vue'
 import ShowOrden from './views/sale/ShowOrden.vue'
 import EditOrden from './views/sale/EditOrden.vue'
 
-
+Vue.use(VueRouter);
 
 /* Client */
 const router  = new VueRouter ({
-    history,
+
     linkActiveClass: 'is-active',
     base: process.env.BASE_URL,
     routes: [
@@ -139,12 +139,6 @@ const router  = new VueRouter ({
             meta: { requiresAuth: true },
         },
         {
-            path: '/404',
-            name: 'notfound',
-            component: NotFound,
-
-        },
-        {
             path: '*',
             name: 'notfound',
             component: NotFound,
@@ -174,14 +168,9 @@ const router  = new VueRouter ({
 })
 
 router.beforeEach((to, from, next)=> {
-   const loggedIn = localStorage.getItem('user');
-
-   if(to.matched.some(record=> record.meta.auth) && !loggedIn) {
-       next('/login')
-       return
-   }
-
-   next()
+    const publicPages = ['/','/login','/register'];
+    if (to.name !== 'login' && !publicPages.includes(to.path)) next({ name: 'login' })
+    else next()
 })
 
 

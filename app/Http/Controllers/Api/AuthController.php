@@ -9,14 +9,15 @@ use Illuminate\Support\Facades\Hash;
 use App\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
+
 class AuthController extends Controller
 {
 
     public function login(Request $request)
     {
-        $data = $request->validate([
+       $request->validate([
             'email' => 'required|email',
-            'password' => 'required'
+            'password' => 'required|min:6'
         ]);
 
         $user = User::where('email', $request->email)->first();
@@ -24,18 +25,21 @@ class AuthController extends Controller
         if(!$user || !Hash::check($request->password, $user->password)) {
           return response([
             'message'=> ['These credentials do not match our records']
-          ], 404);
+          ], 401);
         }
 
 
-        $token = $user->createToken('my-app-token')->plainTextToken;
+        $token = $user->createToken('my-app-token')->accessToken;
 
         $response = [
           'user'=>$user,
           'token'=>$token
         ];
+        return response()->json([$response,
+            'message' => 'Logueo Exitoso',
+            200
+        ]);
 
-        return response($response, 201);
 
     }
 
@@ -43,16 +47,17 @@ class AuthController extends Controller
 
 
         $validator= Validator::make( $request->all(),[
-            'name'=>'required'|'string'|'max:255',
+            'username'=>'required|string|max:255',
             'email'=>'required|email|unique:users',
-            'password'=>'required|min:8|confirmed'
+            'password'=>'required|min:6|confirmed',
+            'password_confirmation' => 'required|min:6|same:password'
         ]);
 
 
 
 
         if($validator->fails()){
-            return response()->json(['error'=>$validator->errors()],401);
+            return response()->json(['error'=>$validator->errors(),'message' => 'Error al crear el usuario !'],401);
         }
 
         $user= $request->all();
@@ -62,9 +67,10 @@ class AuthController extends Controller
 
 
 
-        $success['name'] = $user->name;
+        $success['username'] = $user->username;
         $user['api_token']=Str::random(40);
-        return response()->json(['success'=>$user, 'access_token'=>$accessToken]);
+        return response()->json(['success'=>$user, 'access_token'=>$accessToken,'message' => 'Usuario Creado!'],
+        201);
 
     }
 

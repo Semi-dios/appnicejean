@@ -35,7 +35,7 @@
                 >
               </li>
               <li class="nav__item ">
-                <a href="/#/login" class="nav__link">Login</a>
+                <a  class="nav__link" id="show-modal" @click="showModal = true" href="#" role="button">Login</a>
               </li>
               <li class="nav__item d-flex align-items-center justify-content-center" >
                 <i
@@ -53,6 +53,8 @@
       </header>
 
       <main class="l-main">
+        <!------------ SIDEBAR LOGIN ------------->
+          <modalLogin  v-if="showModal" @close="showModal = false" ></modalLogin>
         <!--------------- HOME --------------->
         <section class="home" id="home">
           <div class="home__container bd-container bd-grid">
@@ -876,10 +878,16 @@
 </template>
 
 <script>
+import modalLogin from './Login'
 export default {
+    name: 'Landing',
+    components: {
+        modalLogin
+    } ,
   data() {
     return {
       scrolly: "",
+       showModal: false
     };
   },
 
@@ -928,4 +936,36 @@ export default {
 
 <style>
 
+.wrapper {
+    min-height: 100vh;
+    max-height: 100%;
+}
+
+.sidebar {
+    height: 100vh;
+    overflow-y: auto;
+    overflow-x: visible;
+    z-index: 1000;
+    min-width: 62px;
+}
+
+.sidebar::-webkit-scrollbar {
+    width: 0;
+}
+
+.sidebar > .navbar {
+    position: relative;
+    height: 100%;
+    overflow: visible;
+}
+
+.sidebar-right {
+    right: 0;
+    left: initial;
+}
+
+main {
+    max-height: 100%;
+    overflow-y: auto;
+}
 </style>

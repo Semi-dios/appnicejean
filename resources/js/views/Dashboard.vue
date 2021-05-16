@@ -72,14 +72,14 @@
               <div class="card-header ui-sortable-handle" style="cursor: move;">
                 <h3 class="card-title">
                   <i class="fas fa-chart-pie mr-1"></i>
-                  Referencias  mas vendidas  
+                  Referencias  mas vendidas
                 </h3>
                 <div class="card-tools">
                   <ul class="nav nav-pills ml-auto">
                     <li class="nav-item">
                       <a class="nav-link active" href="#revenue-chart" data-toggle="tab">Area</a>
                     </li>
-                  
+
                   </ul>
                 </div>
               </div><!-- /.card-header -->
@@ -89,7 +89,7 @@
                   <div class="chart tab-pane active" id="revenue-chart" style="position: relative; height: 300px;"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
                       <canvas id="revenue-chart-canvas" height="600" style="height: 300px; display: block; width: 1122px;" width="2244" class="chartjs-render-monitor"></canvas>
                    </div>
-                  
+
                 </div>
               </div><!-- /.card-body -->
             </div>
@@ -133,7 +133,7 @@
                 <!-- /.row -->
               </div>
               <!-- /.card-body -->
-             
+
               <!-- /.footer -->
             </div>
             </section>
@@ -149,7 +149,25 @@
 
 <script>
 export default {
-
+    name: 'Home',
+    data(){
+        return {
+            content: ''
+        };
+    },
+    mounted(){
+        UserService.getPublicContent().then(
+            response => {
+                this.content = response.data;
+            },
+            error => {
+                this.content =
+                (error.response && error.response.data)
+                || error.message
+                || error.toString();
+            }
+        )
+    }
 }
 </script>
 <style lang="scss">

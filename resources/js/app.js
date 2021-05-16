@@ -7,12 +7,21 @@ import Vue from 'vue';
 window.Vue = Vue;
 import App from './App.vue';
 import router from './routes';
-import store from './store';
+import axios from 'axios'
+import VueAxios from 'vue-axios'
+Vue.use(VueAxios, axios)
+
+Vue.prototype.$isLoggin= false;
+/* import store from './store'; */
 require('./bootstrap');
 import VeeValidate from 'vee-validate';
 
  import VueRouter from 'vue-router';
  Vue.use(VueRouter);
+/*
+import common from './common';
+
+Vue.mixin(common); */
 
 
 Vue.config.productionTip = false;
@@ -20,24 +29,6 @@ Vue.use(VeeValidate)
 
 new Vue({
     router,
-    store,
-    created() {
-        const userInfo = localStorage.getItem('user')
-        if(userInfo) {
-            const userData = JSON.parse(userInfo)
-            this.$store.commit('setUserData',userData)
-        }
-
-        axios.interceptors.response.use (
-            response =>response,
-            error => {
-                if(error.response.status === 401){
-                    this.$store.dispatch('logout')
-                }
-                return Promise.reject(error)
-            }
-        )
-    },
     render: h=>h(App),
 
 }).$mount('#app');

@@ -13,18 +13,30 @@
                   <img class="profile-user-img img-fluid img-circle" src="/images/avatar3.png" alt="User profile picture">
                 </div>
 
-                <h3 class="profile-username text-center">Nina Mcintire</h3>
+                <h3 class="profile-username text-center">{{currentUser.username}}</h3>
 
                 <p class="text-muted text-center">Desarrollador Web</p>
 
                 <ul class="list-group list-group-unbordered mb-3">
                   <li class="list-group-item">
-                    <b>Rol</b> <a class="float-right">Vendedor</a>
+                    <b>Rol</b>
+                    <br>
+                    <ul>
+                        <li v-for="(role, index) in currentUser.roles" :key="index">
+                            <p>{{role}}</p>
+                        </li>
+
+                    </ul>
                   </li>
                   <li class="list-group-item">
-                    <b>Correo</b> <a class="float-right">correo@gmail.com</a>
+                    <b>Correo</b> <a class="float-right">{{currentUser.email}}</a>
                   </li>
-                
+                  <li class="list-group-item">
+                    <b>Token</b> <a class="float-right">{{currentUser.accessToken.substring(0,20)}}
+                        {{currentUser.accessToken.substr(currentUser.accessToken.length - 20)}}</a>
+                  </li>
+
+
                 </ul>
               </div>
               <!-- /.card-body -->
@@ -52,7 +64,7 @@
 
                 <hr>
 
-             
+
 
                 <hr>
 
@@ -95,9 +107,9 @@
                           <input type="text" class="form-control" id="inputName2" placeholder="Telefono">
                         </div>
                       </div>
-                     
-                 
-                   
+
+
+
                       <div class="form-group row">
                         <div class="offset-sm-2 col-sm-10">
                           <button type="submit" class="btn btn-danger">Actualizar</button>
@@ -122,6 +134,22 @@
 
 <script>
 export default {
+    name: 'Profile',
+    computed: {
+        currentUser(){
+            return this.$store.state.auth.user;
+        }
+    },
+    mounted(){
+        if(!this.currentUser) {
+            this.$router.push('/login')
+        }
+    },
+    data() {
+        return {
+
+        }
+    }
 
 }
 </script>

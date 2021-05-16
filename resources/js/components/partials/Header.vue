@@ -108,10 +108,12 @@
         </div>
       </li>
       <li class="nav-item">
-        <button class="nav-link btn" type="button" data-widget="control-sidebar" data-slide="true" v-if="islogged" @click="logout()">Logout</button>
+        <button class="nav-link btn" type="button" data-widget="control-sidebar"
+         data-slide="true"  @click.prevent="logOut">Logout</button>
       </li>
       <li class="nav-item">
-        <a class="nav-link"  data-widget="control-sidebar" data-slide="true" href="#"><i class="fas fa-th-large"></i></a>
+        <a class="nav-link"  data-widget="control-sidebar"
+         data-slide="true" href="#"><i class="fas fa-th-large"></i></a>
       </li>
     </ul>
   </nav>
@@ -119,6 +121,15 @@
 
 <script>
 export default {
+    computed() {
+        return this.$store.state.auth.user;
+    },
+    methods:{
+        logOut(){
+            this.$store.dispatch('/logout');
+            this.$router.push('/login');
+        }
+    }
 
 }
 </script>
