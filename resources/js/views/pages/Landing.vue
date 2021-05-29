@@ -1,5 +1,5 @@
 <template>
-  <div class="body-container container-fluid" id="viewLanding">
+  <div class="body-container prueba container-fluid" id="viewLanding">
     <div class="row">
       <div class="col-sm-2"></div>
 
