@@ -553,6 +553,44 @@
             background-color: $container-dark;
         }
 
+        #modalLogin {
+            .custom-modal-content {
+                background: $body-dark;
+                .social-line.custom-card-body {
+                    background: transparent;
+
+                }
+            }
+            #viewLogin, #viewRegister {
+                .custom-card {
+                    background: $body-dark;
+                    .login-card-body, .register-card-body  {
+                        background-color: $body-dark;
+                        color: $primary;
+                        form {
+                            input {
+                                border-top: 1px solid $primary-alt;
+                                border-bottom: 1px solid $primary-alt;
+                                border-left: 1px solid $primary-alt;
+
+                            }
+                            .input-group-text {
+                                border-top: 1px solid $primary-alt;
+                                border-bottom: 1px solid $primary-alt;
+                                border-right: 1px solid $primary-alt;
+                                background: $grey-5;
+                                background-color: $grey-5;
+                                i,span {
+                                    color: $primary;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+        }
+
     }
 }
 
@@ -562,8 +600,106 @@
 
 
 /* 1.2 Login */
+#modalLogin {
+    background-color: rgba(0, 0, 0, .25);
+    @include transition();
+    .custom-modal-dialog {
+        @include transition();
 
+        .custom-modal-content {
+            @include box-shadow($top: 0.4rem, $left: 0.4rem, $blur: 0.8rem, $color: #00000099, $inset: "");
+            @include  radius($border-top-left: 0.4rem, $border-top-right: 0.4rem, $border-bottom-left: 0.4rem, $border-bottom-right: 0.4rem);
+            border: none;
+            @include transition();
+            .custom-modal-header {
+                padding-top:0;
+                padding-right: 1.5rem;
+                padding-bottom:  1.5rem;
+                padding-left: 1.5rem;
+                display: flex;
+                justify-content: center;
+                position: relative;
+                margin-bottom: 7rem;
+                border: none;
+               .custom-card {
+                @include box-shadow($top: 0.1rem, $left: 0.1rem, $blur: 0.2rem, $color: rgba(0, 0, 0, .15), $inset: "");
+                height: auto;
+                position: absolute;
+                top: -1rem;
+                background: $primary;
+                color: $white;
+                @include  radius($border-top-left: 0.4rem, $border-top-right: 0.4rem, $border-bottom-left: 0.4rem, $border-bottom-right: 0.4rem);
+                border: none;
+                padding: 1.5rem;
+                box-sizing: border-box;
+                min-width: 300px;
+
+                .custom-card-header {
+                   display: flex;
+                   align-items: center;
+                   justify-content: center;
+
+                    .custom-card-title {
+                        color: $white;
+                        font-weight: 900;
+                        font-size: 1.5rem;
+
+
+                    }
+                    .close {
+                        font-size: 1rem;
+                        padding: 0.3rem;
+                        color: $white;
+                        position: absolute;
+                        font-weight: 600;
+                        top: 1.5rem;
+                        right: 1.5rem;
+                        i, span {
+                            color: $white;
+                            font-weight: 600;
+                        }
+                    }
+                }
+                .custom-card-body {
+                    display: inline-block;
+                    &.social-line {
+                        .btn-just-icon {
+                            @include btnic-sod();
+                            i {
+                                color: inherit;
+                            }
+                            &.custom-btnic-primary {
+                                &:hover {
+                                    i {
+                                        color: $white;
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                }
+
+               }
+
+            }
+        }
+    }
+}
+ #viewLogin {
+    .custom-card {
+        border: none;
+        width:100%;
+        display:flex;
+        justify-content:center;
+        box-shadow: none;
+    }
+}
 /* 1.3 Register */
+
+#viewRegister {
+    @extend #viewLogin;
+}
 /* 1.4 Forgot */
 /*1.5 Recovery */
 

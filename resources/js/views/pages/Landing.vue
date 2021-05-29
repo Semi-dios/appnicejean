@@ -35,7 +35,7 @@
                 >
               </li>
               <li class="nav__item ">
-                <a  class="nav__link" id="show-modal" @click="showModal = true" href="#" role="button">Login</a>
+                <a  class="nav__link" id="show-modal" @click="showModal()" href="#" role="button">Login</a>
               </li>
               <li class="nav__item d-flex align-items-center justify-content-center" >
                 <i
@@ -887,11 +887,15 @@ export default {
   data() {
     return {
       scrolly: "",
-       showModal: false
+      
     };
   },
 
   methods: {
+    showModal(){
+        const modalLogin =document.getElementById('modalLogin');
+        modalLogin.style.display = 'block';
+    },  
     showMenu() {
       const nav = document.getElementById("nav-menu");
       //console.log(nav);
@@ -936,36 +940,5 @@ export default {
 
 <style>
 
-.wrapper {
-    min-height: 100vh;
-    max-height: 100%;
-}
 
-.sidebar {
-    height: 100vh;
-    overflow-y: auto;
-    overflow-x: visible;
-    z-index: 1000;
-    min-width: 62px;
-}
-
-.sidebar::-webkit-scrollbar {
-    width: 0;
-}
-
-.sidebar > .navbar {
-    position: relative;
-    height: 100%;
-    overflow: visible;
-}
-
-.sidebar-right {
-    right: 0;
-    left: initial;
-}
-
-main {
-    max-height: 100%;
-    overflow-y: auto;
-}
 </style>

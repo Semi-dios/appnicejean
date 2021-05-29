@@ -167,11 +167,11 @@ const router  = new VueRouter ({
     ]
 })
 
-router.beforeEach((to, from, next)=> {
-    const publicPages = ['/','/login','/register'];
-    if (to.name !== 'login' && !publicPages.includes(to.path)) next({ name: 'login' })
+/* router.beforeEach((to, from, next)=> {
+    const publicPages = ['/','/register'];
+    if (to.name !== 'landing' && !publicPages.includes(to.path)) next({ name: 'landing' })
     else next()
-})
+}) */
 
 
 export default  router;

@@ -6,16 +6,19 @@ $container-dark: #27302C;
 
 //Screen
 
+$small: 680px;
+$medium: 980px;
+$large: 1440px;
+
+
 $tablet: 1024px;
 
 // Typography
 $font-family-sans-serif:'Roboto', sans-serif;
-$font-size-base: 0.938rem;
+$font-size-base: 0.9rem;
 $line-height-base: 1.6;
+$font-family-fontawesome: 'Font Awesome\ 5 Free';
 
-
-
-// Colors
 
 $primary:  #069c54;
 $primary-alt:  #048654;
@@ -29,6 +32,10 @@ $yellow: #ffb81c;
 $green: #43b02a;
 $teal: #4dc0b5;
 $cyan: #6cb2eb;
+// Greys
+
+
+
 // Greys
 
 $black: #000;
@@ -59,9 +66,43 @@ $orange-3: #ffcc80;
 $orange-2: #ffb74d;
 $orange-1: #ffa726;
 
-// Green
 
-//Purple
 
+//Yellow
+$yellow-6: #ffeb3b;
+$yellow-5: #ffee58;
+$yellow-4: #fff176;
+$yellow-3: #fff59d;
+$yellow-2: #fff9c4;
+$yellow-1: #fffde7;
+
+
+
+//Red
+$red-6: #f44336;
+$red-5: #ef5350;
+$red-4: #e57373;
+$red-3: #ef9a9a;
+$red-2: #ffcdd2;
+$red-1: #ffebee;
+
+
+
+
+
+
+//Green
+$green-6: #4caf50;
+$green-5: #66bb6a;
+$green-4: #81c784;
+$green-3: #a5d6a7;
+$green-2: #c8e6c9;
+$green-1: #e8f5e9;
 
 //Blue
+$blue-6: #03a9f4;
+$blue-5: #29b6f6;
+$blue-4: #4fc3f7;
+$blue-3: #81d4fa;
+$blue-2: #b3e5fc;
+$blue-1: #e1f5fe;
