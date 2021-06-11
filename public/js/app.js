@@ -5522,6 +5522,17 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //import User from '../../models/user';
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'Register',
@@ -5531,16 +5542,32 @@ __webpack_require__.r(__webpack_exports__);
         username: '',
         email: '',
         password: '',
-        password_confirmation: ''
+        password_confirmation: '',
+        roles: ''
       },
       submitted: false,
       successful: false,
       message: '',
-      title: 'Registro'
+      title: 'Registro',
+      roles: [{
+        value: 1,
+        name: 'Admin'
+      }, {
+        value: 2,
+        name: 'Operador'
+      }, {
+        value: 3,
+        name: 'Vendedor'
+      }, {
+        value: 4,
+        name: 'Otro'
+      }]
     };
   },
   computed: {},
-  mounted: function mounted() {},
+  mounted: function mounted() {
+    /* this.setInfoRol(); */
+  },
   methods: {
     viewLogin: function viewLogin() {
       this.title = 'Iniciar Sesión';
@@ -5552,6 +5579,12 @@ __webpack_require__.r(__webpack_exports__);
 
       this.message = '';
       this.submitted = true;
+      /*  var formData = new FormData;
+       formData.append(username, this.data.username);
+       formData.append(email, this.data.email);
+       formData.append(password, this.data.password);
+       formData.append(password_confirmation, this.data.password_confirmation); */
+
       this.$validator.validate().then(function (isValid) {
         if (isValid) {
           _this.axios.post('api/auth/register', _this.data).then(function (response) {
@@ -5569,6 +5602,13 @@ __webpack_require__.r(__webpack_exports__);
             _this.successful = false;
           });
         }
+      });
+    },
+    setInfoRol: function setInfoRol() {
+      this.axios.post('api/roles').then(function (response) {
+        console.log(res);
+      })["catch"](function (error) {
+        console.log(error);
       });
     }
   }
@@ -57376,7 +57416,7 @@ var render = function() {
   return _c(
     "div",
     {
-      staticClass: "body-container container-fluid",
+      staticClass: "body-container prueba container-fluid",
       attrs: { id: "viewLanding" }
     },
     [
@@ -59862,6 +59902,52 @@ var render = function() {
                             ]
                           )
                         : _vm._e()
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "form-row" }, [
+                    _c("div", { staticClass: "form-group col-sm-12" }, [
+                      _c(
+                        "select",
+                        {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: _vm.data.roles,
+                              expression: "data.roles"
+                            }
+                          ],
+                          staticClass: "form-control",
+                          on: {
+                            change: function($event) {
+                              var $$selectedVal = Array.prototype.filter
+                                .call($event.target.options, function(o) {
+                                  return o.selected
+                                })
+                                .map(function(o) {
+                                  var val = "_value" in o ? o._value : o.value
+                                  return val
+                                })
+                              _vm.$set(
+                                _vm.data,
+                                "roles",
+                                $event.target.multiple
+                                  ? $$selectedVal
+                                  : $$selectedVal[0]
+                              )
+                            }
+                          }
+                        },
+                        _vm._l(_vm.roles, function(rol, index) {
+                          return _c(
+                            "option",
+                            { key: index, domProps: { value: rol.value } },
+                            [_vm._v(_vm._s(rol.name))]
+                          )
+                        }),
+                        0
+                      )
                     ])
                   ]),
                   _vm._v(" "),

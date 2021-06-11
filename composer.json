@@ -16,7 +16,9 @@
         "laravel/passport": "~9.0",
         "laravel/sanctum": "^2.10",
         "laravel/tinker": "^2.5",
-        "laravel/ui": "2.4"
+        "laravel/ui": "2.4",
+        "laravelcollective/html": "^6.2",
+        "spatie/laravel-permission": "^4.2"
     },
     "require-dev": {
         "facade/ignition": "^2.0",

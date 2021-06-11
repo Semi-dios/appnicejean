@@ -97,6 +97,17 @@
                                             </div>
                                 </div>
                           </div>
+                          <div class="form-row">
+                              <div class="form-group col-sm-12">
+
+                                <select  v-model="data.roles" class="form-control">
+                                <option v-for="(rol,index) in roles" :key="index"  v-bind:value="rol.value">{{rol.name}}</option>
+
+                                </select>
+                            </div>
+
+
+                          </div>
                             <div class="row">
                            <div class="col-sm-12 ">
                                 <div class="custom-check">
@@ -156,13 +167,32 @@ export default {
             username: '',
             email: '',
             password: '',
-            password_confirmation : ''
+            password_confirmation : '',
+            roles: ''
+
 
             },
             submitted: false,
             successful:false,
             message: '',
-            title :'Registro'
+            title :'Registro',roles:  [
+                {
+                    value: 1,
+                    name: 'Admin'
+                },
+                {
+                    value: 2,
+                    name: 'Operador'
+                },
+                {
+                    value: 3,
+                    name: 'Vendedor'
+                },
+                {
+                    value: 4,
+                    name: 'Otro'
+                },
+            ]
 
 
         };
@@ -171,6 +201,7 @@ export default {
 
     },
     mounted(){
+        /* this.setInfoRol(); */
     },
     methods: {
         viewLogin(){
@@ -181,6 +212,11 @@ export default {
         handleRegister() {
             this.message = '';
             this.submitted = true;
+           /*  var formData = new FormData;
+            formData.append(username, this.data.username);
+            formData.append(email, this.data.email);
+            formData.append(password, this.data.password);
+            formData.append(password_confirmation, this.data.password_confirmation); */
             this.$validator.validate().then(isValid => {
                 if(isValid) {
                     this
@@ -206,6 +242,16 @@ export default {
                       })
                 }
             });
+        },
+        setInfoRol(){
+            this.axios
+            .post('api/roles')
+            .then(response => {
+                console.log(res);
+            })
+            .catch(error=>{console.log(error)});
+
+
         }
     }
 }

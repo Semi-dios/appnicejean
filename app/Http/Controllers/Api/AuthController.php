@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Hash;
 use App\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
+use Spatie\Permission\Models\Role;
 
 class AuthController extends Controller
 {
@@ -50,7 +51,8 @@ class AuthController extends Controller
             'username'=>'required|string|max:255',
             'email'=>'required|email|unique:users',
             'password'=>'required|min:6|confirmed',
-            'password_confirmation' => 'required|min:6|same:password'
+            'password_confirmation' => 'required|min:6|same:password',
+            'roles'=>'required'
         ]);
 
 
@@ -63,6 +65,7 @@ class AuthController extends Controller
         $user= $request->all();
         $user['password'] = Hash::make($user['password']);
         $user = User::create($user);
+        $user->assignRole($request->input('roles'));
         $accessToken = $user->createToken('MyApp')->accessToken;
 
 

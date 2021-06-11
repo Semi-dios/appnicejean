@@ -18,14 +18,15 @@ use Illuminate\Support\Facades\Route;
 
 Route::post('auth/login', 'Api\AuthController@login');
 Route::post('auth/register', 'Api\AuthController@register');
+Route::resource('roles', 'Api\RoleController');
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
 
 
 
 Route::middleware(['auth:sanctum'])->group(function () {
+
+    Route::resource('users', 'Api\UserController');
+    Route::resource('products', 'Api\ProductController');
     Route::get('user-info', 'Api\AuthController@user');
     Route::post('logout','Api\AuthController@logout');
 });
