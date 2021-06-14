@@ -47,16 +47,7 @@ export default {
         Sidebar
 
     },
-    computed: {
-        ...mapGetters([
-            'islogged'
-        ])
-    },
-    methods: {
-        logout () {
-            this.$store.dispatch('logout')
-        }
-    }
+
 
 
 

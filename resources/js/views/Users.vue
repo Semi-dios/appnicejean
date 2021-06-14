@@ -56,6 +56,7 @@
 </template>
 
 <script>
+import { mapGetters, mapActions } from "vuex";
 export default {
     data(){
         return {
@@ -106,7 +107,14 @@ export default {
                     },
             ]
         }
-    }
+    },
+    computed: {
+        ...mapGetters({User: "StateUser"}),
+
+    },
+    methods: {
+        ...mapActions(["SetUser"])
+    },
 
 
 }

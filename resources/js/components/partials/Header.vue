@@ -109,7 +109,7 @@
       </li>
       <li class="nav-item">
         <button class="nav-link btn" type="button" data-widget="control-sidebar"
-         data-slide="true"  @click.prevent="logOut">Logout</button>
+         data-slide="true"  @click.prevent="logout">Logout</button>
       </li>
       <li class="nav-item">
         <a class="nav-link"  data-widget="control-sidebar"
@@ -121,13 +121,16 @@
 
 <script>
 export default {
-    computed() {
-        return this.$store.state.auth.user;
+
+     computed: {
+        isLoggedIn: function () {
+            return this.$store.getters.isAuthenticated;
+        }
     },
-    methods:{
-        logOut(){
-            this.$store.dispatch('/logout');
-            this.$router.push('/login');
+    methods: {
+        async logout () {
+            await this.$store.dispatch('LogOut')
+            this.$router.push('/');
         }
     }
 

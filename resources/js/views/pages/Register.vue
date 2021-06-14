@@ -158,7 +158,7 @@
 </template>
 
 <script>
-//import User from '../../models/user';
+import { mapActions } from "vuex";
 export default {
     name: 'Register',
     data(){
@@ -204,44 +204,33 @@ export default {
         /* this.setInfoRol(); */
     },
     methods: {
+        ...mapActions(["Register"]),
         viewLogin(){
         this.title = 'Iniciar Sesión';
         var  show=  true;
         this.$emit('viewShowI', `${this.title}`, show);
       },
-        handleRegister() {
+         handleRegister() {
+
             this.message = '';
             this.submitted = true;
-           /*  var formData = new FormData;
-            formData.append(username, this.data.username);
-            formData.append(email, this.data.email);
-            formData.append(password, this.data.password);
-            formData.append(password_confirmation, this.data.password_confirmation); */
+
             this.$validator.validate().then(isValid => {
                 if(isValid) {
-                    this
-                    .axios
-                    .post('api/auth/register',this.data)
-                    .then(
-                      response => {
-                         this.message = response.data.message;
-                        console.log(response.data.message)
-                        this.successful = true;
-                      },
-
-                    )
-                    .catch( error => {
-                        this.message = (error.response.data.message);
-                         console.log(error.toString());
-                        /* this.message =
-                         (error.response && error.response.data) ||
-                         error.message ||
-                         error.toString(); */
-                            this.successful = false;
-
-                      })
+                    this.submit();
                 }
             });
+        },
+        async submit (){
+             try {
+                await this.Register(this.data);
+                this.message = 'Usuario Creado !';
+                 this.successful = true;
+            } catch (error) {
+                 this.message = 'Error al crear el usuario Creado !';
+                         console.log(error.toString());
+                            this.successful = false;
+            }
         },
         setInfoRol(){
             this.axios

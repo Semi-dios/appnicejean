@@ -114,6 +114,7 @@
 </template>
 
 <script>
+import { mapActions } from "vuex";
 import viewRegister from './Register.vue';
 export default {
     name: 'Login',
@@ -139,6 +140,8 @@ created(){
 
 },
 methods: {
+    ...mapActions(["LogIn"]),
+
     viewShow(data, show){
         console.log(data)
         this.title =  data;
@@ -149,7 +152,7 @@ methods: {
         const modalLogin =document.getElementById('modalLogin');
         modalLogin.style.display = 'none';
     },
-     async handlelogin() {
+     handlelogin() {
       this.$isLoggin = true;
        this.$validator.validateAll().then(isValid =>  {
          if(!isValid) {
@@ -157,37 +160,30 @@ methods: {
            return;
          }
         if (this.data.email && this.data.password) {
-            const res =
-            this
-            .axios
-            .post('api/auth/login', this.data)
-            .then(
-                 response => {
-                         this.message = response.data.message;
-                        console.log(response.data.message)
-                        this.successful = true;
-                         this.$isLoggin = true;
-                         this.$router.push({ name: "dashboard" })
-
-                      },
-            )
-            .catch( error => {
-                this.message = (error.response.data.message);
-                    console.log(error.toString());
-                /* this.message =
-                    (error.response && error.response.data) ||
-                    error.message ||
-                    error.toString(); */
-                    this.successful = false;
-
-                })
-
-
+                this.submit();
         }
 
        })
 
+     },
+     async submit(){
+         const User = new FormData;
+         User.append("email",this.data.email)
+         User.append("password",this.data.password)
+
+         try {
+             await this.LogIn(User) ;
+             this.$router.push("/dashboard")
+             this.successful = true;
+              this.message = 'Iniciando ..  !';
+
+         }catch(error) {
+               this.message = 'Error al iniciar sesión !';
+                         console.log(error.toString());
+                            this.successful = false;
+         }
      }
+
 },
 
 mounted(){

@@ -32,6 +32,7 @@ import Sale from './views/Sale.vue'
 import CreateOrden from './views/sale/CreateOrden.vue'
 import ShowOrden from './views/sale/ShowOrden.vue'
 import EditOrden from './views/sale/EditOrden.vue'
+import store from './store/index'
 
 Vue.use(VueRouter);
 
@@ -49,12 +50,14 @@ const router  = new VueRouter ({
         {
             path: '/login',
             name: 'login',
-            component: Login
+            component: Login,
+            meta: {guest:true}
         },
         {
             path: '/register',
             name: 'register',
-            component: Register
+            component: Register,
+            meta: {guest:true}
         },
         {
             path: '/forgot',
@@ -144,7 +147,7 @@ const router  = new VueRouter ({
             component: NotFound,
 
         },
-
+            /* Tokens */
         {
             path: '/dashboard/clients',
             name: 'passport-clients',
@@ -167,12 +170,31 @@ const router  = new VueRouter ({
     ]
 })
 
-/* router.beforeEach((to, from, next)=> {
-    const publicPages = ['/','/register'];
-    if (to.name !== 'landing' && !publicPages.includes(to.path)) next({ name: 'landing' })
-    else next()
-}) */
 
+router.beforeEach((to, from, next)=>{
+    if(to.matched.some(record => record.meta.requiresAuth)){
+        if(store.getters.isAuthenticated) {
+            next('/');
+            return;
+        }
+        next();
+    } else {
+        next();
+    }
+})
+
+router.beforeEach((to, from, next) => {
+    if(to.matched.some((record)=>record.meta.guest)) {
+        if(store.getters.isAuthenticated) {
+            next("/dashboard");
+            return;
+        }
+
+        next();
+    }else {
+        next();
+    }
+})
 
 export default  router;
 
