@@ -31,7 +31,7 @@
               </li>
               <li class="nav__item ">
                 <a href="#contact" class="nav__link" @click="hideMenu"
-                  >Contact us</a
+                  >Contact </a
                 >
               </li>
               <li class="nav__item ">
@@ -887,7 +887,7 @@ export default {
   data() {
     return {
       scrolly: "",
-      
+
     };
   },
 
@@ -895,7 +895,7 @@ export default {
     showModal(){
         const modalLogin =document.getElementById('modalLogin');
         modalLogin.style.display = 'block';
-    },  
+    },
     showMenu() {
       const nav = document.getElementById("nav-menu");
       //console.log(nav);
