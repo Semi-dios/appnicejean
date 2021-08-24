@@ -11,7 +11,7 @@
       <!--------------- HEADER --------------->
       <header class="l-header  z-fixed scroll-header" id="header">
         <nav class="nav bd-container">
-          <a href="#" class="nav__logo">Tasty</a>
+          <a href="#" class="nav__logo">Talent Speakers</a>
 
           <div class="nav__menu" id="nav-menu">
             <ul class="nav__list">

@@ -11,7 +11,7 @@ import axios from 'axios'
 import VueAxios from 'vue-axios'
 Vue.use(VueAxios, axios);
 
-Vue.prototype.$isLoggin= false;
+//Vue.prototype.$isLoggin= false;
  import store from './store/index';
 require('./bootstrap');
 import VeeValidate from 'vee-validate';

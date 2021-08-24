@@ -76839,8 +76839,8 @@ window.Vue = vue__WEBPACK_IMPORTED_MODULE_0___default.a;
 
 
 
-vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_axios__WEBPACK_IMPORTED_MODULE_4___default.a, axios__WEBPACK_IMPORTED_MODULE_3___default.a);
-vue__WEBPACK_IMPORTED_MODULE_0___default.a.prototype.$isLoggin = false;
+vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_axios__WEBPACK_IMPORTED_MODULE_4___default.a, axios__WEBPACK_IMPORTED_MODULE_3___default.a); //Vue.prototype.$isLoggin= false;
+
 
 
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
